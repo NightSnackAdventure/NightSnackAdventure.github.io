@@ -181,7 +181,7 @@ p {
     line-height: 1.9;
 }
 
-p:first-of-type {
+.prose-section p:first-of-type {
     text-indent: 0;
 }
 
