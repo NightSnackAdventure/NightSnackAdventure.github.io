@@ -181,11 +181,11 @@ p {
     line-height: 1.9;
 }
 
-.prose-section p:first-of-type {
+p:first-of-type {
     text-indent: 0;
 }
 
-p:first-of-type::first-letter {
+.prose-section p:first-of-type::first-letter {
     font-family: 'Cinzel', serif;
     font-size: 4rem;
     line-height: 1;
