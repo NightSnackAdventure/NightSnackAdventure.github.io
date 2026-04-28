@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elutherius Aurum - Character Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Spectral:wght@300;400;600;700&family=Cinzel:wght@400;600;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --teal: #0d9488;
+            --teal-bright: #14b8a6;
+            --teal-dark: #0f766e;
+            --charcoal: #2d2d2d;
+            --slate: #475569;
+            --warm-gray: #57534e;
+            --bg-dark: #1a1a1a;
+            --bg-medium: #2a2a2a;
+            --accent-gold: #fbbf24;
+            --text-light: #e2e8f0;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--charcoal) 50%, var(--bg-dark) 100%);
+            color: var(--text-light);
+            font-family: 'Spectral', serif;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(13, 148, 136, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(20, 184, 166, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--teal);
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: var(--teal-bright);
+            box-shadow: 0 0 20px var(--teal-bright);
+        }
+
+        .name {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--teal-bright), var(--teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+            text-shadow: 0 0 40px rgba(13, 148, 136, 0.3);
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+
+        .epithet {
+            font-family: 'Libre Baskerville', serif;
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            font-style: italic;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            margin-bottom: 0.5rem;
+        }
+
+        .class-line {
+            font-family: 'Spectral', serif;
+            font-size: 1.1rem;
+            color: var(--teal-bright);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 600;
+        }
+
+        /* Prose sections */
+        .prose-section {
+            background: rgba(42, 42, 42, 0.6);
+            backdrop-filter: blur(10px);
+            border-left: 4px solid var(--teal);
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.8s ease-out backwards;
+        }
+
+        .prose-section:nth-child(odd) {
+            border-left-color: var(--teal-dark);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .prose-section:nth-child(2) { animation-delay: 0.1s; }
+        .prose-section:nth-child(3) { animation-delay: 0.2s; }
+        .prose-section:nth-child(4) { animation-delay: 0.3s; }
+        .prose-section:nth-child(5) { animation-delay: 0.4s; }
+        .prose-section:nth-child(6) { animation-delay: 0.5s; }
+        .prose-section:nth-child(7) { animation-delay: 0.6s; }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            font-weight: 700;
+            color: var(--teal-bright);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--teal-bright), transparent);
+        }
+
+        h3 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--teal);
+            margin: 2rem 0 1rem;
+            font-style: italic;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            color: var(--text-light);
+            text-indent: 2em;
+            line-height: 1.9;
+        }
+
+        p:first-of-type {
+            text-indent: 0;
+        }
+
+        p:first-of-type::first-letter {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            line-height: 1;
+            float: left;
+            margin: 0.1em 0.1em 0 0;
+            color: var(--teal-bright);
+            font-weight: 700;
+        }
+
+        /* Quote styling */
+        .quote {
+            background: linear-gradient(135deg, rgba(13, 148, 136, 0.1), rgba(20, 184, 166, 0.05));
+            border-left: 4px solid var(--teal-bright);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            text-indent: 0 !important;
+            border-radius: 4px;
+        }
+
+        .quote::before {
+            content: '"';
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: var(--teal);
+            opacity: 0.5;
+            line-height: 0;
+            margin-right: 0.5rem;
+        }
+
+        /* Stat block */
+        .stat-block {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            background: rgba(13, 148, 136, 0.1);
+            border: 1px solid var(--teal-dark);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: rgba(13, 148, 136, 0.15);
+            border-color: var(--teal-bright);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(13, 148, 136, 0.2);
+        }
+
+        .stat-label {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--teal-bright);
+        }
+
+        /* List styling */
+        ul {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+            font-size: 0.8rem;
+        }
+
+        /* Emphasis */
+        em {
+            color: var(--teal-bright);
+            font-style: italic;
+        }
+
+        strong {
+            color: var(--teal-bright);
+            font-weight: 700;
+        }
+
+        /* Divider */
+        .divider {
+            text-align: center;
+            margin: 3rem 0;
+            font-size: 1.5rem;
+            color: var(--teal);
+            opacity: 0.5;
+            letter-spacing: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            border-top: 2px solid var(--teal-dark);
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .prose-section {
+                padding: 1.5rem;
+            }
+
+            p {
+                text-indent: 1em;
+            }
+
+            .stat-block {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll animations */
+        @media (prefers-reduced-motion: no-preference) {
+            .prose-section {
+                opacity: 0;
+                animation: fadeIn 1s ease-out forwards;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="name">Elutherius Aurum</h1>
+            <p class="epithet">"Therius"</p>
+            <p class="class-line">Evocation Wizard • Scholar of the Ether</p>
+        </header>
+
+        <section class="prose-section">
+            <h2>The Paradox of Freedom</h2>
+            
+            <p>The name itself is a manifesto. <em>Elutherius</em>—from the ancient word for freedom, for liberation from bondage. It was chosen deliberately, perhaps by parents who understood what it meant to live under constraint, or perhaps by the man himself when he realized that names, like magic, are declarations of intent. Either way, it suits him. The Ether recognizes no masters, bends to no divine will, answers only to those who understand its fundamental nature as pure, unbounded force. So too does Elutherius Aurum approach the world: with the conviction that freedom is not merely a right but a cosmic principle, woven into the very fabric of reality.</p>
+
+            <p>Yet freedom, he has discovered, is not simple. It is not the absence of structure but the negotiation between what one wishes to be and what one must appear to be. Between the demands of scholarship—with its hierarchies and conventions and unspoken rules about proper conduct—and the restless need for motion, for risk, for the electric thrill of uncertainty. Most days, he feels suspended between these competing aspects of himself, never quite at peace with either, always conscious of performing one while suppressing the other.</p>
+
+            <p>In the halls of Erytreum, he is Professor Aurum (or will be, eventually, if he can maintain some semblance of academic respectability). He sits properly when senior faculty are watching. He cites his sources. He presents his research with appropriate gravitas, rolling out his full name—<em>Elutherius Aurum</em>—when meeting with the administrators or the wealthy patrons who fund the university's work. The effect is usually successful; there is something about the classical weight of those syllables that confers legitimacy, that suggests old knowledge and careful study.</p>
+
+            <p>But alone, or among those who have no rank to lord over him, the performance falls away. His feet find their way onto desks. He sits sideways across chair arms, or perched on windowsills, or sometimes simply on the floor because it is, objectively, right there and more comfortable than maintaining the fiction of proper posture. His colleagues at the fighting rings know him only as Therius, and they care nothing for his academic credentials—only whether his summons can hold their own in the arena, whether his coin is good, whether his nerve holds when the odds turn against him.</p>
+        </section>
+
+        <section class="prose-section">
+            <h2>The Study of Evocation</h2>
+
+            <p>If magic is physics—and Elutherius is convinced it is—then evocation is the study of energy in its purest, most violent forms. The conversion of potential to kinetic. The manifestation of elemental force. He specializes in air and fire, drawn to their volatility, their refusal to be contained or controlled beyond the briefest moment of channeling.</p>
+
+            <p>Fire, because it transforms. Because it is both creation and destruction, warmth and annihilation, dancing at the edge of control. His affinity for flame magic began early, with cantrips that sparked between his fingers, and has grown into something more refined—complex evocations that can level battlefields or reduce obstacles to ash with surgical precision. When he works with fire, he feels the kinship between himself and the element: both burning bright, both consuming what fuel they find, both dangerous when left unchecked.</p>
+
+            <p>Air, because it moves. Because it cannot be grasped or held, only redirected. Wind magic appeals to the part of him that chafes against stillness, that needs motion and change and the sensation of forces in flux. He can shape gales and summon lightning, can create pockets of vacuum or walls of howling wind. More than once, he has used air magic to position himself on the battlefield—perhaps closer to the center than tactical wisdom would recommend, but close enough to feel the pulse of combat, close enough to matter.</p>
+
+            <div class="quote">
+                It's fine. I have True Strike.
+            </div>
+
+            <p>This has become something of a personal philosophy. When questioned about his tendency to stand within fireball range of the enemy, he offers this explanation with complete sincerity. The cantrip does improve his accuracy, after all. That it does nothing for his defense seems, to him, beside the point. He is there to channel the Ether into devastating effect, not to cower at the rear. Besides, there is a certain poetry to it—the evocation wizard, master of destructive force, trusting in precision rather than distance to keep him alive.</p>
+
+            <p>His research focuses on the theoretical underpinnings of evocation magic: the conversion rates between Ether potential and manifest energy, the resonance patterns that make certain elements more responsive in certain conditions, the way that environmental factors influence spell efficacy. He has published several papers on the subject, all rigorously researched and carefully documented. He takes his scholarship seriously, even when nothing else about his life suggests discipline or restraint.</p>
+        </section>
+
+        <section class="prose-section">
+            <h2>The Arena and the Summons</h2>
+
+            <p>There are two fighting rings in Adanesne's Entertainment District. The first hosts mortal combatants—skilled warriors who fight for coin and glory in matches that are brutal, bloody, and entirely consensual. Elutherius attends these regularly, ostensibly to study combat dynamics and applied probability theory, though in truth he simply finds them exhilarating. The controlled violence, the stakes, the uncertainty of outcome. It satisfies something the library cannot.</p>
+
+            <p>But it is the second ring—the summoning arena—where he truly comes alive. Here, wizards call forth creatures from across the planes and pit them against one another in matches that test both the summoner's skill and the entity's combat prowess. It is, by any measure, a strange practice. Ethically questionable, some would say, though the regulations are strict and the creatures are not precisely "real" in the way mortal beings are—they are manifestations of Ether given temporary form, conjured and dismissed according to the ancient contracts that govern such magic.</p>
+
+            <p>Elutherius has been attending the summoning rings for years now. His companion in these endeavors is a fire elemental he calls Sparky—a name that started as a joke and somehow stuck. Sparky is temperamental, intelligent in the way that elemental beings are intelligent, and possessed of what might charitably be called a learning curve. Their early matches were disasters. Loss after loss, week after week, as Therius learned the rhythms of summoning combat and Sparky learned to trust his intentions.</p>
+
+            <p>But they improved. Slowly, painfully, through repeated failure and careful observation, they developed something like partnership. Sparky began to anticipate his commands. Elutherius learned to read the elemental's moods, to sense when to push forward and when to pull back. Their win rate is still not impressive by competitive standards, but they win often enough to earn respect among the other summoners. More importantly, they have developed a rapport that goes beyond simple conjuration—there is genuine coordination between them now, a shared understanding of tactics and timing.</p>
+
+            <p>He keeps meticulous notes on every match. The environmental conditions, Sparky's performance, the opponent's strategies, his own decision-making. It is research, he tells himself. Documentation of summoning mechanics and combat variables. And it is—but it is also the record of a partnership, the slow accumulation of trust between a wizard and an elemental being who has answered his call dozens of times and will, if asked, answer again.</p>
+        </section>
+
+        <section class="prose-section">
+            <h2>The Research That Was At Least 40% Research</h2>
+
+            <p>There are aspects of his past that he handles carefully, turning them over in memory like shards of glass—sharp enough to cut if gripped wrong, but too significant to discard entirely. The relationship that ended badly. The succubus. The ex-girlfriend who, quite reasonably, did not accept his explanation that the encounter had been primarily academic in nature.</p>
+
+            <p>In his defense—and he has constructed this defense carefully, rehearsed it until the words come smoothly—there was genuine research value in the experience. Succubi are infernal beings whose charm magic operates on principles not fully documented in the literature. Their ability to manipulate mortal desire raises questions about the intersection of enchantment and emotion, about the nature of magical compulsion versus natural attraction. He did take notes. Detailed observations on the mechanisms of charm, the physiological and psychological effects, the subtle ways that infernal magic differs from arcane enchantment. The data was valuable.</p>
+
+            <p>The notes were also, if he is being honest with himself—which he tries to be, in private moments when the justifications fall away—written largely after the fact. An attempt to retroactively frame an impulsive decision as something more deliberate. He knows this. He suspects his ex-girlfriend knew it too, which is why the defense failed so spectacularly.</p>
+
+            <div class="quote">
+                At least 40% research.
+            </div>
+
+            <p>This has become his standard formulation when the subject comes up. Not a lie, exactly. Not quite the truth either. Somewhere in between, like most of his explanations for why he does things that seem, in retrospect, obviously inadvisable. The remaining 60%—the curiosity, the attraction, the simple fact that he wanted to and convinced himself the wanting was sufficient justification—those parts remain unspoken.</p>
+
+            <p>He has learned from this, though perhaps not the lesson most people would hope for. He has learned that some truths are better left unexamined. That documentation can serve as both evidence and excuse. That when you make choices governed by impulse rather than reason, the best you can do is write them down carefully and hope that history, at least, will find them interesting.</p>
+        </section>
+
+        <section class="prose-section">
+            <h2>The Land That Wasn't Won</h2>
+
+            <p>The third land rush was supposed to change things. He had registered early, secured his ticket, spent weeks imagining the tower he would build on whatever plot the lottery assigned him. A proper wizard's tower—not ostentatious, but sufficient. A place to work undisturbed, to house his growing library, to conduct research without the constraints of university oversight. A space of his own, earned through the simple mechanism of showing up and hoping the odds favored him.</p>
+
+            <p>They did not. When the raffle results were announced and his number failed to appear, the disappointment was sharp and immediate. Not devastating—he has experienced worse—but significant enough that he spent the rest of that day sitting alone in his quarters, feet propped on the desk in a position that would have horrified his posture-conscious professors, thinking about the next two to three years he would need to wait before another opportunity arose.</p>
+
+            <p>In the aftermath, he has found himself unexpectedly unmoored. The tower had been a goal, something concrete to work toward. Without it, the future feels less defined. Perhaps this is for the best. Perhaps he is not yet ready for the kind of settled existence a tower represents. Perhaps he needs these next few years to determine what he actually wants, beyond the vague notion of independence and research space.</p>
+
+            <p>Or perhaps the delay is simply the universe's way of forcing him to sit with uncertainty. To remain in motion rather than settling. To continue navigating the tension between his scholarly ambitions and his need for something more immediate, more visceral, than ancient texts and theoretical frameworks can provide.</p>
+
+            <p>Either way, he will wait. And in the waiting, he will continue his research. Continue attending the fighting rings. Continue the slow work of becoming whoever Elutherius Aurum is supposed to be, once he finally figures that out.</p>
+        </section>
+
+        <section class="prose-section">
+            <h2>The Performance of Authority</h2>
+
+            <p>He has discovered, somewhat to his surprise, that he can be quite convincing when he wants to be. His charisma is not of the warm, approachable variety—he is too intense for that, too prone to launching into explanations that lose his audience halfway through—but there is a certain magnetism in conviction, in the absolute certainty with which he presents his positions.</p>
+
+            <p>When he rolls out his full name in the presence of Adanesne's elite—<em>Elutherius Aurum, scholar of evocation theory, researcher at Erytreum Halls</em>—people listen. The classical weight of it, combined with his genuine expertise and the intensity of his focus, creates an impression of authority that works more often than it probably should. He has talked his way into research grants, into conversations with influential faculty, into introductions that have opened doors his actual reputation might not have warranted.</p>
+
+            <p>This is not to say he is a charlatan. His research is legitimate, his knowledge substantial. But he has learned to leverage presentation alongside substance, to understand that how you say something matters nearly as much as what you say. In academic circles, confidence can substitute for certainty. Intensity can mask inexperience. And a well-deployed classical name can buy you credibility while you prove yourself worthy of it.</p>
+
+            <p>The trick, he has found, is knowing when to use the full performance and when to drop it. Among the posh and powerful, he is Elutherius Aurum, every syllable pronounced with deliberate weight. Among his peers and students, he is Therius, approachable enough to ask questions of, informal enough not to seem threatening. And at the fighting rings, he is simply another summoner with coin to wager and a fire elemental who occasionally wins.</p>
+
+            <p>The fact that all three are true simultaneously—that he is both the serious scholar and the casual gambler and the man who cannot sit in a chair properly to save his life—is something he has stopped trying to reconcile. Perhaps this, too, is a form of freedom: the refusal to be only one thing, the insistence that contradiction is not the same as dishonesty.</p>
+        </section>
+
+        <section class="prose-section">
+            <h2>Forward, Into Uncertainty</h2>
+
+            <p>He does not know where this path leads. The tower is years away, if it comes at all. His research continues but offers no clear endpoint, no obvious culmination. His relationship with Sparky grows stronger, but the fighting rings are not a career, merely a passion pursued in margins of time that perhaps should be devoted to more productive endeavors. And his personal life—well. That remains complicated in ways he is still learning to navigate.</p>
+
+            <p>But forward is the only direction that makes sense. Forward into the next research question, the next match, the next morning when he will wake up and choose, once again, which version of himself to perform and which to let rest. The Ether does not judge these choices. It simply responds to will, to knowledge, to the focused application of understanding. And if there is one thing Elutherius Aurum understands, it is that magic—like freedom, like identity itself—is not a destination but a practice. Something you do, repeatedly, until the doing itself becomes its own justification.</p>
+
+            <p>He studies. He summons. He gambles and researches and occasionally makes decisions that seem, even to him, questionable in retrospect. He sits improperly in chairs and drinks potions that perhaps he relies on too heavily and positions himself closer to danger than wisdom would recommend, because wisdom has never been his particular virtue. What he has instead is conviction. The bone-deep certainty that the Ether is his to work with, that knowledge is worth pursuing even when the path is unclear, that freedom—messy and complicated and sometimes uncomfortable as it is—remains the highest principle worth defending.</p>
+
+            <div class="quote">
+                My magic is between me and the Ether. No gods. No masters. Just the work, and the will to do it.
+            </div>
+        </section>
+
+        <div class="divider">✦ ✦ ✦</div>
+
+        <section class="prose-section">
+            <h2>Reference: The Facts</h2>
+
+            <div class="stat-block">
+                <div class="stat-item">
+                    <div class="stat-label">Full Name</div>
+                    <div class="stat-value">Elutherius Aurum</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Common Name</div>
+                    <div class="stat-value">Therius</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Class</div>
+                    <div class="stat-value">Evocation Wizard</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Specialization</div>
+                    <div class="stat-value">Air & Fire</div>
+                </div>
+            </div>
+
+            <h3>Academic Pursuits</h3>
+            <ul>
+                <li>Postgraduate researcher at Erytreum Halls</li>
+                <li>Focus: Theoretical foundations of evocation magic</li>
+                <li>Published work on Ether-to-energy conversion and elemental resonance</li>
+                <li>Maintains detailed documentation of all experiments (success and failure alike)</li>
+                <li>Known for thorough research methods, if unorthodox personal conduct</li>
+            </ul>
+
+            <h3>Combat Preferences</h3>
+            <ul>
+                <li>Favors high-impact evocation spells over subtle magic</li>
+                <li>Reliable use of True Strike to improve accuracy</li>
+                <li>Tendency to position aggressively on the battlefield</li>
+                <li>Competent tactical awareness, occasionally overridden by enthusiasm</li>
+                <li>Partners with fire elemental (Sparky) in summoning arena matches</li>
+            </ul>
+
+            <h3>Philosophy</h3>
+            <ul>
+                <li>Views magic as natural law (the Ether), not divine gift</li>
+                <li>Believes in personal freedom and minimal external authority</li>
+                <li>Advocates for reduced regulation of magical items</li>
+                <li>"No gods, no masters" — self-directed study and practice</li>
+                <li>Documentation as evidence: if written down, it qualifies as research</li>
+            </ul>
+
+            <h3>Personal Habits</h3>
+            <ul>
+                <li>Cannot sit in chairs conventionally (feet on desk, sideways positions, windowsills)</li>
+                <li>Regular attendee of both mortal and summoning fighting rings</li>
+                <li>Drinks Potion of Speed, possibly more than strictly necessary</li>
+                <li>Performs respectability for authority figures, abandons it otherwise</li>
+                <li>Uses full name (Elutherius Aurum) for formal/posh contexts</li>
+                <li>Goes by Therius in casual settings</li>
+            </ul>
+
+            <h3>Current Situation</h3>
+            <ul>
+                <li>Did not win plot in third land rush; must wait 2-3 years for next opportunity</li>
+                <li>Continuing research and teaching responsibilities at Erytreum</li>
+                <li>Maintaining partnership with Sparky at summoning rings</li>
+                <li>Navigating tension between scholarly ambitions and need for immediate experience</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>The life of Elutherius Aurum, as documented thus far</p>
+        <p>Adanesne, Year 20 • A work in progress</p>
+    </footer>
+</body>
+</html>
