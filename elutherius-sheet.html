@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elutherius Aurum — Character Sheet</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --teal: #0d9488;
@@ -24,7 +27,11 @@
             --glow: rgba(20, 184, 166, 0.15);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             background: var(--bg-dark);
@@ -165,6 +172,7 @@
         }
 
         .col-left {}
+
         .col-right {
             display: flex;
             flex-direction: column;
@@ -193,7 +201,7 @@
             opacity: 0.6;
         }
 
-        .card + .card {
+        .card+.card {
             margin-top: 1.5rem;
         }
 
@@ -289,10 +297,17 @@
             font-size: 0.95rem;
         }
 
-        .save-item:last-child { border-bottom: none; }
+        .save-item:last-child {
+            border-bottom: none;
+        }
 
-        .save-name { color: var(--text-light); }
-        .save-name.proficient { color: var(--teal-bright); }
+        .save-name {
+            color: var(--text-light);
+        }
+
+        .save-name.proficient {
+            color: var(--teal-bright);
+        }
 
         .save-bonus {
             font-family: 'Cinzel', serif;
@@ -301,7 +316,9 @@
             font-weight: 600;
         }
 
-        .save-bonus.proficient { color: var(--teal-bright); }
+        .save-bonus.proficient {
+            color: var(--teal-bright);
+        }
 
         .prof-dot {
             width: 7px;
@@ -336,7 +353,9 @@
             transition: background 0.15s;
         }
 
-        .skill-item:hover { background: rgba(13, 148, 136, 0.06); }
+        .skill-item:hover {
+            background: rgba(13, 148, 136, 0.06);
+        }
 
         .skill-item.proficient {
             background: rgba(13, 148, 136, 0.08);
@@ -348,8 +367,13 @@
             gap: 0.5rem;
         }
 
-        .skill-name { color: var(--text-light); }
-        .skill-name.proficient { color: var(--teal-bright); }
+        .skill-name {
+            color: var(--text-light);
+        }
+
+        .skill-name.proficient {
+            color: var(--teal-bright);
+        }
 
         .skill-bonus {
             font-family: 'Cinzel', serif;
@@ -360,7 +384,9 @@
             text-align: right;
         }
 
-        .skill-bonus.proficient { color: var(--teal-bright); }
+        .skill-bonus.proficient {
+            color: var(--teal-bright);
+        }
 
         /* ===================== COMBAT ROW ===================== */
         .combat-row {
@@ -454,15 +480,23 @@
             cursor: pointer;
         }
 
-        .pip:hover { background: rgba(13, 148, 136, 0.4); }
-        .pip.used { background: transparent; border-color: var(--text-dim); }
+        .pip:hover {
+            background: rgba(13, 148, 136, 0.4);
+        }
+
+        .pip.used {
+            background: transparent;
+            border-color: var(--text-dim);
+        }
 
         /* ===================== SPELLS ===================== */
         .spell-section {
             margin-bottom: 1.2rem;
         }
 
-        .spell-section:last-child { margin-bottom: 0; }
+        .spell-section:last-child {
+            margin-bottom: 0;
+        }
 
         .spell-section-title {
             font-family: 'Cinzel', serif;
@@ -598,10 +632,21 @@
             align-self: stretch;
         }
 
-        .item-rarity.uncommon { background: linear-gradient(180deg, #2d9e4a, #1a6b30); }
-        .item-rarity.rare { background: linear-gradient(180deg, #3b6fd4, #1e3f8a); }
-        .item-rarity.common { background: linear-gradient(180deg, #888, #555); }
-        .item-rarity.trinket { background: linear-gradient(180deg, var(--gold), var(--gold-dim)); }
+        .item-rarity.uncommon {
+            background: linear-gradient(180deg, #2d9e4a, #1a6b30);
+        }
+
+        .item-rarity.rare {
+            background: linear-gradient(180deg, #3b6fd4, #1e3f8a);
+        }
+
+        .item-rarity.common {
+            background: linear-gradient(180deg, #888, #555);
+        }
+
+        .item-rarity.trinket {
+            background: linear-gradient(180deg, var(--gold), var(--gold-dim));
+        }
 
         .item-content {}
 
@@ -710,12 +755,24 @@
 
         /* ===================== ANIMATIONS ===================== */
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(16px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .header { animation: fadeUp 0.6s ease-out backwards; }
-        .sheet-grid { animation: fadeUp 0.7s 0.1s ease-out backwards; }
+        .header {
+            animation: fadeUp 0.6s ease-out backwards;
+        }
+
+        .sheet-grid {
+            animation: fadeUp 0.7s 0.1s ease-out backwards;
+        }
 
         /* ===================== RESPONSIVE ===================== */
         @media (max-width: 800px) {
@@ -737,8 +794,13 @@
         }
 
         @media (max-width: 500px) {
-            .header-stats { grid-template-columns: repeat(3, 1fr); }
-            .ability-grid { grid-template-columns: repeat(2, 1fr); }
+            .header-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .ability-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         /* HP tracker interactivity */
@@ -793,217 +855,257 @@
         }
     </style>
 </head>
+
 <body>
-<div class="page">
+    <div class="page">
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="name-block">
-            <h1 class="character-name">Elutherius Aurum</h1>
-            <p class="character-epithet">"Therius" — goes by Therius, only rolls out the full name to impress</p>
-            <div class="character-meta">
-                <span class="meta-tag">Human</span>
-                <span class="meta-tag">Evoker Wizard lvl 5</span>
-                <span class="meta-tag">Sage</span>
-            </div>
-        </div>
-        <div class="header-stats">
-            <div class="header-stat">
-                <span class="header-stat-value">14</span>
-                <span class="header-stat-label">Spell DC</span>
-            </div>
-            <div class="header-stat">
-                <span class="header-stat-value">+6</span>
-                <span class="header-stat-label">Spell Atk</span>
-            </div>
-            <div class="header-stat">
-                <span class="header-stat-value">+3</span>
-                <span class="header-stat-label">Prof Bonus</span>
-            </div>
-            <div class="header-stat">
-                <span class="header-stat-value">+7</span>
-                <span class="header-stat-label">Initiative</span>
-            </div>
-            <div class="header-stat">
-                <span class="header-stat-value">14</span>
-                <span class="header-stat-label">AC</span>
-            </div>
-            <div class="header-stat">
-                <span class="header-stat-value">30</span>
-                <span class="header-stat-label">Speed</span>
-            </div>
-        </div>
-    </header>
-
-    <div class="sheet-grid">
-
-        <!-- LEFT COLUMN -->
-        <div class="col-left">
-
-            <!-- ABILITY SCORES -->
-            <div class="card">
-                <div class="card-title">Ability Scores</div>
-                <div class="ability-grid">
-                    <div class="ability">
-                        <span class="ability-mod">−1</span>
-                        <span class="ability-score">8</span>
-                        <span class="ability-name">STR</span>
-                    </div>
-                    <div class="ability">
-                        <span class="ability-mod">+2</span>
-                        <span class="ability-score">14</span>
-                        <span class="ability-name">DEX</span>
-                    </div>
-                    <div class="ability">
-                        <span class="ability-mod">+2</span>
-                        <span class="ability-score">14</span>
-                        <span class="ability-name">CON</span>
-                    </div>
-                    <div class="ability highlight">
-                        <span class="ability-mod">+3</span>
-                        <span class="ability-score">17</span>
-                        <span class="ability-name">INT</span>
-                    </div>
-                    <div class="ability">
-                        <span class="ability-mod">+1</span>
-                        <span class="ability-score">12</span>
-                        <span class="ability-name">WIS</span>
-                    </div>
-                    <div class="ability">
-                        <span class="ability-mod">+0</span>
-                        <span class="ability-score">10</span>
-                        <span class="ability-name">CHA</span>
-                    </div>
+        <!-- HEADER -->
+        <header class="header">
+            <div class="name-block">
+                <h1 class="character-name">Elutherius Aurum</h1>
+                <p class="character-epithet">"Therius" — goes by Therius, only rolls out the full name to impress</p>
+                <div class="character-meta">
+                    <span class="meta-tag">Human</span>
+                    <span class="meta-tag">Evoker Wizard lvl 5</span>
+                    <span class="meta-tag">Sage</span>
                 </div>
             </div>
-
-            <!-- HP -->
-            <div class="card">
-                <div class="card-title">Hit Points</div>
-                <div class="combat-stat" style="background:none; border:none; padding: 0.5rem 0;">
-                    <div class="hp-tracker">
-                        <button class="hp-btn" onclick="changeHP(-1)">−</button>
-                        <span id="current-hp">?</span>
-                        <button class="hp-btn" onclick="changeHP(1)">+</button>
-                    </div>
-                    <span class="combat-label">current / <span class="hp-max">roll 8 + 4d6 + 10 CON</span></span>
-                    <div class="initiative-note">d6 hit die · roll with Himbo at session start</div>
+            <div class="header-stats">
+                <div class="header-stat">
+                    <span class="header-stat-value">14</span>
+                    <span class="header-stat-label">Spell DC</span>
+                </div>
+                <div class="header-stat">
+                    <span class="header-stat-value">+6</span>
+                    <span class="header-stat-label">Spell Atk</span>
+                </div>
+                <div class="header-stat">
+                    <span class="header-stat-value">+3</span>
+                    <span class="header-stat-label">Prof Bonus</span>
+                </div>
+                <div class="header-stat">
+                    <span class="header-stat-value">+7</span>
+                    <span class="header-stat-label">Initiative</span>
+                </div>
+                <div class="header-stat">
+                    <span class="header-stat-value">14</span>
+                    <span class="header-stat-label">AC</span>
+                </div>
+                <div class="header-stat">
+                    <span class="header-stat-value">30</span>
+                    <span class="header-stat-label">Speed</span>
                 </div>
             </div>
+        </header>
 
-            <!-- SAVING THROWS -->
-            <div class="card">
-                <div class="card-title">Saving Throws</div>
-                <div class="save-list">
-                    <div class="save-item">
-                        <span><span class="prof-dot"></span><span class="save-name">Strength</span></span>
-                        <span class="save-bonus">−1</span>
-                    </div>
-                    <div class="save-item">
-                        <span><span class="prof-dot"></span><span class="save-name">Dexterity</span></span>
-                        <span class="save-bonus">+2</span>
-                    </div>
-                    <div class="save-item">
-                        <span><span class="prof-dot"></span><span class="save-name">Constitution</span></span>
-                        <span class="save-bonus">+2</span>
-                    </div>
-                    <div class="save-item">
-                        <span><span class="prof-dot filled"></span><span class="save-name proficient">Intelligence</span></span>
-                        <span class="save-bonus proficient">+6</span>
-                    </div>
-                    <div class="save-item">
-                        <span><span class="prof-dot filled"></span><span class="save-name proficient">Wisdom</span></span>
-                        <span class="save-bonus proficient">+4</span>
-                    </div>
-                    <div class="save-item">
-                        <span><span class="prof-dot"></span><span class="save-name">Charisma</span></span>
-                        <span class="save-bonus">+0</span>
+        <div class="sheet-grid">
+
+            <!-- LEFT COLUMN -->
+            <div class="col-left">
+
+                <!-- ABILITY SCORES -->
+                <div class="card">
+                    <div class="card-title">Ability Scores</div>
+                    <div class="ability-grid">
+                        <div class="ability">
+                            <span class="ability-mod">−1</span>
+                            <span class="ability-score">8</span>
+                            <span class="ability-name">STR</span>
+                        </div>
+                        <div class="ability">
+                            <span class="ability-mod">+2</span>
+                            <span class="ability-score">14</span>
+                            <span class="ability-name">DEX</span>
+                        </div>
+                        <div class="ability">
+                            <span class="ability-mod">+2</span>
+                            <span class="ability-score">14</span>
+                            <span class="ability-name">CON</span>
+                        </div>
+                        <div class="ability highlight">
+                            <span class="ability-mod">+3</span>
+                            <span class="ability-score">17</span>
+                            <span class="ability-name">INT</span>
+                        </div>
+                        <div class="ability">
+                            <span class="ability-mod">+1</span>
+                            <span class="ability-score">12</span>
+                            <span class="ability-name">WIS</span>
+                        </div>
+                        <div class="ability">
+                            <span class="ability-mod">+0</span>
+                            <span class="ability-score">10</span>
+                            <span class="ability-name">CHA</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- SKILLS -->
-            <div class="card">
-                <div class="card-title">Skills</div>
-                <div class="skill-list">
-                    <div class="skill-item">
-                        <div class="skill-left"><span class="prof-dot"></span><span class="skill-name">Athletics</span><span style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(STR)</span></div>
-                        <span class="skill-bonus">−1</span>
+                <!-- HP -->
+                <div class="card">
+                    <div class="card-title">Hit Points</div>
+                    <div class="combat-stat" style="background:none; border:none; padding: 0.5rem 0;">
+                        <div class="hp-tracker">
+                            <button class="hp-btn" onclick="changeHP(-1)">−</button>
+                            <span id="current-hp">?</span>
+                            <button class="hp-btn" onclick="changeHP(1)">+</button>
+                        </div>
+                        <span class="combat-label">current / <span class="hp-max">roll 8 + 4d6 + 10 CON</span></span>
+                        <div class="initiative-note">d6 hit die · roll with Himbo at session start</div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-left"><span class="prof-dot"></span><span class="skill-name">Acrobatics</span><span style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(DEX)</span></div>
+                </div>
+
+                <!-- SAVING THROWS -->
+                <div class="card">
+                    <div class="card-title">Saving Throws</div>
+                    <div class="save-list">
+                        <div class="save-item">
+                            <span><span class="prof-dot"></span><span class="save-name">Strength</span></span>
+                            <span class="save-bonus">−1</span>
+                        </div>
+                        <div class="save-item">
+                            <span><span class="prof-dot"></span><span class="save-name">Dexterity</span></span>
+                            <span class="save-bonus">+2</span>
+                        </div>
+                        <div class="save-item">
+                            <span><span class="prof-dot"></span><span class="save-name">Constitution</span></span>
+                            <span class="save-bonus">+2</span>
+                        </div>
+                        <div class="save-item">
+                            <span><span class="prof-dot filled"></span><span
+                                    class="save-name proficient">Intelligence</span></span>
+                            <span class="save-bonus proficient">+6</span>
+                        </div>
+                        <div class="save-item">
+                            <span><span class="prof-dot filled"></span><span
+                                    class="save-name proficient">Wisdom</span></span>
+                            <span class="save-bonus proficient">+4</span>
+                        </div>
+                        <div class="save-item">
+                            <span><span class="prof-dot"></span><span class="save-name">Charisma</span></span>
+                            <span class="save-bonus">+0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SKILLS -->
+                <div class="card">
+                    <div class="card-title">Skills</div>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-left"><span class="prof-dot"></span><span
+                                    class="skill-name">Athletics</span><span
+                                    style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(STR)</span></div>
+                            <span class="skill-bonus">−1</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-left"><span class="prof-dot"></span><span
+                                    class="skill-name">Acrobatics</span><span
+                                    style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(DEX)</span></div>
+                            <span class="skill-bonus">+2</span>
+                        </div>
+                        <div class="skill-item"></div>
+                        <div class="skill-left"><span class="prof-dot filled"></span><span
+                                class="skill-name proficient">Sleight of Hand</span><span
+                                style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(DEX)</span></div>
                         <span class="skill-bonus">+2</span>
                     </div>
-                    <div class="skill-item"></div>
-                        <div class="skill-left"><span class="prof-dot filled"></span><span class="skill-name proficient">Sleight of Hand</span><span style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(DEX)</span></div>
-                        <span class="skill-bonus">+2</span>
-                    </div>
                     <div class="skill-item">
-                        <div class="skill-left"><span class="prof-dot"></span><span class="skill-name">Stealth</span><span style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(DEX)</span></div>
+                        <div class="skill-left"><span class="prof-dot"></span><span
+                                class="skill-name">Stealth</span><span
+                                style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(DEX)</span></div>
                         <span class="skill-bonus">+2</span>
                     </div>
                     <div class="skill-item proficient">
-                        <div class="skill-left"><span class="prof-dot filled"></span><span class="skill-name proficient">Arcana</span><span style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(INT)</span></div>
+                        <div class="skill-left"><span class="prof-dot filled"></span><span
+                                class="skill-name proficient">Arcana</span><span
+                                style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(INT)</span></div>
                         <span class="skill-bonus proficient">+9</span>
                     </div>
                     <div class="skill-item proficient">
-                        <div class="skill-left"><span class="prof-dot filled"></span><span class="skill-name proficient">History</span><span style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(INT)</span></div>
+                        <div class="skill-left"><span class="prof-dot filled"></span><span
+                                class="skill-name proficient">History</span><span
+                                style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(INT)</span></div>
                         <span class="skill-bonus proficient">+6</span>
                     </div>
                     <div class="skill-item proficient">
-                        <div class="skill-left"><span class="prof-dot filled"></span><span class="skill-name proficient">Investigation</span><span style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(INT)</span></div>
+                        <div class="skill-left"><span class="prof-dot filled"></span><span
+                                class="skill-name proficient">Investigation</span><span
+                                style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(INT)</span></div>
                         <span class="skill-bonus proficient">+6</span>
                     </div>
                     <div class="skill-item proficient">
-                        <div class="skill-left"><span class="prof-dot filled"></span><span class="skill-name proficient">Nature</span><span style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(INT)</span></div>
+                        <div class="skill-left"><span class="prof-dot filled"></span><span
+                                class="skill-name proficient">Nature</span><span
+                                style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(INT)</span></div>
                         <span class="skill-bonus proficient">+6</span>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-left"><span class="prof-dot"></span><span class="skill-name">Religion</span><span style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(INT)</span></div>
+                        <div class="skill-left"><span class="prof-dot"></span><span
+                                class="skill-name">Religion</span><span
+                                style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(INT)</span></div>
                         <span class="skill-bonus">+3</span>
                     </div>
                     <div class="skill-item proficient">
-                        <div class="skill-left"><span class="prof-dot filled"></span><span class="skill-name proficient">Perception</span><span style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(WIS)</span></div>
+                        <div class="skill-left"><span class="prof-dot filled"></span><span
+                                class="skill-name proficient">Perception</span><span
+                                style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(WIS)</span></div>
                         <span class="skill-bonus proficient">+4</span>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-left"><span class="prof-dot"></span><span class="skill-name">Animal Handling</span><span style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(WIS)</span></div>
+                        <div class="skill-left"><span class="prof-dot"></span><span class="skill-name">Animal
+                                Handling</span><span
+                                style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(WIS)</span></div>
                         <span class="skill-bonus">+1</span>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-left"><span class="prof-dot"></span><span class="skill-name">Insight</span><span style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(WIS)</span></div>
+                        <div class="skill-left"><span class="prof-dot"></span><span
+                                class="skill-name">Insight</span><span
+                                style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(WIS)</span></div>
                         <span class="skill-bonus">+1</span>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-left"><span class="prof-dot filled"></span><span class="skill-name proficient">Medicine</span><span style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(WIS)</span></div>
+                        <div class="skill-left"><span class="prof-dot filled"></span><span
+                                class="skill-name proficient">Medicine</span><span
+                                style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(WIS)</span></div>
                         <span class="skill-bonus proficient">+1</span>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-left"><span class="prof-dot"></span><span class="skill-name">Perception</span><span style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(CHA)</span></div>
+                        <div class="skill-left"><span class="prof-dot"></span><span
+                                class="skill-name">Perception</span><span
+                                style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(CHA)</span></div>
                         <span class="skill-bonus">+1</span>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-left"><span class="prof-dot"></span><span class="skill-name">Survival</span><span style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(WIS)</span></div>
+                        <div class="skill-left"><span class="prof-dot"></span><span
+                                class="skill-name">Survival</span><span
+                                style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(WIS)</span></div>
                         <span class="skill-bonus">+1</span>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-left"><span class="prof-dot"></span><span class="skill-name">Deception</span><span style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(CHA)</span></div>
+                        <div class="skill-left"><span class="prof-dot"></span><span
+                                class="skill-name">Deception</span><span
+                                style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(CHA)</span></div>
                         <span class="skill-bonus">+0</span>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-left"><span class="prof-dot"></span><span class="skill-name">Intimidation</span><span style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(CHA)</span></div>
+                        <div class="skill-left"><span class="prof-dot"></span><span
+                                class="skill-name">Intimidation</span><span
+                                style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(CHA)</span></div>
                         <span class="skill-bonus">+0</span>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-left"><span class="prof-dot"></span><span class="skill-name">Performance</span><span style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(CHA)</span></div>
+                        <div class="skill-left"><span class="prof-dot"></span><span
+                                class="skill-name">Performance</span><span
+                                style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(CHA)</span></div>
                         <span class="skill-bonus">+0</span>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-left"><span class="prof-dot"></span><span class="skill-name">Persuasion</span><span style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(CHA)</span></div>
+                        <div class="skill-left"><span class="prof-dot"></span><span
+                                class="skill-name">Persuasion</span><span
+                                style="font-size:0.7rem;color:var(--text-dim);margin-left:0.3rem">(CHA)</span></div>
                         <span class="skill-bonus">+0</span>
                     </div>
                 </div>
-            </div>
 
             <!-- PROFICIENCIES -->
             <div class="card">
@@ -1117,31 +1219,39 @@
                 <div class="feature-list">
                     <div class="feature">
                         <div class="feature-name">Evocation Savant</div>
-                        <div class="feature-desc">2 free evocation spells (lvl 1–2) in spellbook at lvl 3. 1 free evocation spell per new spell level unlocked going forward.</div>
+                        <div class="feature-desc">2 free evocation spells (lvl 1–2) in spellbook at lvl 3. 1 free
+                            evocation spell per new spell level unlocked going forward.</div>
                     </div>
                     <div class="feature">
                         <div class="feature-name">Potent Cantrip</div>
-                        <div class="feature-desc">When a cantrip misses or target succeeds on its save, they still take half damage.</div>
+                        <div class="feature-desc">When a cantrip misses or target succeeds on its save, they still take
+                            half damage.</div>
                     </div>
                     <div class="feature">
                         <div class="feature-name">Ritual Adept</div>
-                        <div class="feature-desc">Can cast any spell with the Ritual tag from spellbook without preparing it.</div>
+                        <div class="feature-desc">Can cast any spell with the Ritual tag from spellbook without
+                            preparing it.</div>
                     </div>
                     <div class="feature">
                         <div class="feature-name">Arcane Recovery</div>
-                        <div class="feature-desc">Once per day after a Short Rest, recover spell slots with combined level no more than half your Wizard level (round up).</div>
+                        <div class="feature-desc">Once per day after a Short Rest, recover spell slots with combined
+                            level no more than half your Wizard level (round up).</div>
                     </div>
                     <div class="feature">
                         <div class="feature-name">Scholar</div>
-                        <div class="feature-desc">While studying magic, you also specialized in another field of study. Choose one of the following skills in which you have proficiency: Arcana, History, Investigation, Medicine, Nature, or Religion. You have Expertise in the chosen skill.</div>
+                        <div class="feature-desc">While studying magic, you also specialized in another field of study.
+                            Choose one of the following skills in which you have proficiency: Arcana, History,
+                            Investigation, Medicine, Nature, or Religion. You have Expertise in the chosen skill.</div>
                     </div>
                     <div class="feature">
                         <div class="feature-name">Memorize Spell</div>
-                        <div class="feature-desc">Once per short rest, swap one prepared spell for another from spellbook. </div>
+                        <div class="feature-desc">Once per short rest, swap one prepared spell for another from
+                            spellbook. </div>
                     </div>
                     <div class="feature">
                         <div class="feature-name">Resourceful (Human)</div>
-                        <div class="feature-desc">Gain Heroic Inspiration after every long rest — a reroll usable on any die.</div>
+                        <div class="feature-desc">Gain Heroic Inspiration after every long rest — a reroll usable on any
+                            die.</div>
                     </div>
                 </div>
             </div>
@@ -1153,17 +1263,21 @@
                     <div class="feat">
                         <div class="feat-name">Alert</div>
                         <div class="feat-source">Human — Versatile trait</div>
-                        <div class="feat-desc">+5 to initiative. Can't be surprised. +6 total initiative bonus. The adrenaline junkie is always coiled. He was born ready.</div>
+                        <div class="feat-desc">+5 to initiative. Can't be surprised. +6 total initiative bonus. The
+                            adrenaline junkie is always coiled. He was born ready.</div>
                     </div>
                     <div class="feat">
                         <div class="feat-name">War Caster</div>
                         <div class="feat-source">Level 4 ASI</div>
-                        <div class="feat-desc">Advantage on CON saves to maintain concentration. Cast spells as opportunity attacks. Perform somatic components while holding weapons/shield. Therius does not let go of a spell just because something hit him.</div>
+                        <div class="feat-desc">Advantage on CON saves to maintain concentration. Cast spells as
+                            opportunity attacks. Perform somatic components while holding weapons/shield. Therius does
+                            not let go of a spell just because something hit him.</div>
                     </div>
                     <div class="feat">
                         <div class="feat-name">Magic Initiate (Wizard)</div>
                         <div class="feat-source">Sage background</div>
-                        <div class="feat-desc">+2 cantrips (Message, Prestidigitation) and 1 level 1 spell once per long rest without a slot.</div>
+                        <div class="feat-desc">+2 cantrips (Message, Prestidigitation) and 1 level 1 spell once per long
+                            rest without a slot.</div>
                     </div>
                 </div>
             </div>
@@ -1176,11 +1290,16 @@
                         <div class="item-rarity rare"></div>
                         <div class="item-content">
                             <div class="item-name">Staff of Charming</div>
-                            <div class="item-type">Staff, Rare · Arcane Focus · Requires Attunement · 10 charges (regains 1d8+2/dawn)</div>
+                            <div class="item-type">Staff, Rare · Arcane Focus · Requires Attunement · 10 charges
+                                (regains 1d8+2/dawn)</div>
                             <div class="item-desc">
-                                Cast Charm Person, Command, or Comprehend Languages (1 charge each, DC 15). <em>Resist Enchantment:</em> turn a failed enchantment save into a success, 1×/dawn. <em>Reflect Enchantment:</em> on a successful save vs. enchantment, spend 1 charge to turn the spell back on the caster.
+                                Cast Charm Person, Command, or Comprehend Languages (1 charge each, DC 15). <em>Resist
+                                    Enchantment:</em> turn a failed enchantment save into a success, 1×/dawn.
+                                <em>Reflect Enchantment:</em> on a successful save vs. enchantment, spend 1 charge to
+                                turn the spell back on the caster.
                                 <br><br>
-                                <span style="font-style:italic;color:var(--text-dim);">It's a family heirloom from his father's side. His mother secured it for him some four years ago.</span>
+                                <span style="font-style:italic;color:var(--text-dim);">It's a family heirloom from his
+                                    father's side. His mother secured it for him some four years ago.</span>
                             </div>
                         </div>
                     </div>
@@ -1192,7 +1311,10 @@
                             <div class="item-desc">
                                 Advantage on saving throws against being charmed. Cast Suggestion 1×/dawn (DC 13).
                                 <br><br>
-                                <span style="font-style:italic;color:var(--text-dim);">Carved in the likeness of a serpent swallowing its own tail, worn by serpentfolk mystics and worshippers of dark gods. A token of good faith. He doesn't know who had it before him. He keeps it for the advantage on charm saves and absolutely no other reason.</span>
+                                <span style="font-style:italic;color:var(--text-dim);">Carved in the likeness of a
+                                    serpent swallowing its own tail, worn by serpentfolk mystics and worshippers of dark
+                                    gods. A token of good faith. He doesn't know who had it before him. He keeps it for
+                                    the advantage on charm saves and absolutely no other reason.</span>
                             </div>
                         </div>
                     </div>
@@ -1204,7 +1326,8 @@
                             <div class="item-desc">
                                 Grants pleasant dreams when worn to sleep.
                                 <br><br>
-                                <span style="font-style:italic;color:var(--text-dim);">He looks adorable in it. It keeps his dreams peaceful.</span>
+                                <span style="font-style:italic;color:var(--text-dim);">He looks adorable in it. It keeps
+                                    his dreams peaceful.</span>
                             </div>
                         </div>
                     </div>
@@ -1216,7 +1339,8 @@
                 <div class="card-title">Equipment</div>
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
                     <div>
-                        <p style="font-size:0.75rem;color:var(--text-dim);font-style:italic;margin-bottom:0.5rem;">Starting Kit</p>
+                        <p style="font-size:0.75rem;color:var(--text-dim);font-style:italic;margin-bottom:0.5rem;">
+                            Starting Kit</p>
                         <div class="prof-grid">
                             <span class="prof-tag">2× Daggers</span>
                             <span class="prof-tag">Robe</span>
@@ -1226,7 +1350,8 @@
                         </div>
                     </div>
                     <div>
-                        <p style="font-size:0.75rem;color:var(--text-dim);font-style:italic;margin-bottom:0.5rem;">Purchased (~27gp of 55gp)</p>
+                        <p style="font-size:0.75rem;color:var(--text-dim);font-style:italic;margin-bottom:0.5rem;">
+                            Purchased (~27gp of 55gp)</p>
                         <div class="prof-grid">
                             <span class="prof-tag">Flask ⚗️</span>
                             <span class="prof-tag">2× Journals</span>
@@ -1247,7 +1372,8 @@
                     <div>
                         <p style="font-size:0.75rem;color:var(--text-dim);font-style:italic;">Gold Remaining</p>
                         <p style="font-family:'Cinzel',serif;font-size:1.1rem;color:var(--gold);">~64 gp</p>
-                        <p style="font-size:0.7rem;color:var(--text-dim);font-style:italic;">(~28gp unspent from background + 36gp rolled)</p>
+                        <p style="font-size:0.7rem;color:var(--text-dim);font-style:italic;">(~28gp unspent from
+                            background + 36gp rolled)</p>
                     </div>
                 </div>
             </div>
@@ -1256,58 +1382,62 @@
     </div>
 
     <div class="sheet-quote">
-        The question is not whether to open it. The question is whether the answer is worth what it costs. It usually is.
+        The question is not whether to open it. The question is whether the answer is worth what it costs. It usually
+        is.
         <br><br>
-        <span style="font-size:0.85rem;color:var(--text-dim);">— Therius, about to open a bag labeled 'dead dove do not eat'</span>
+        <span style="font-size:0.85rem;color:var(--text-dim);">— Therius, about to open a bag labeled 'dead dove do not
+            eat'</span>
     </div>
 
     <footer>
         <p>Elutherius Aurum · Evoker Wizard lvl 5 · Erytreum Halls, Adanesne · Year 20</p>
-        <p style="margin-top:0.3rem;font-size:0.75rem;">A work in progress, as documented thus far · Campaign by Himbo_Akimbo</p>
+        <p style="margin-top:0.3rem;font-size:0.75rem;">A work in progress, as documented thus far · Campaign by
+            Himbo_Akimbo</p>
     </footer>
 
-</div>
+    </div>
 
-<script>
-    // Spell slot pip toggle
-    function togglePip(pip) {
-        pip.classList.toggle('used');
-    }
-
-    // HP tracker
-    let maxHP = null;
-    let currentHP = null;
-
-    // Try to get max HP from user (we'll just make it interactive)
-    const hpDisplay = document.getElementById('current-hp');
-
-    function changeHP(delta) {
-        if (currentHP === null) {
-            currentHP = 0;
+    <script>
+        // Spell slot pip toggle
+        function togglePip(pip) {
+            pip.classList.toggle('used');
         }
-        currentHP = Math.max(0, currentHP + delta);
-        hpDisplay.textContent = currentHP;
-        
-        // Color feedback
-        if (currentHP === 0) {
-            hpDisplay.style.color = '#e05252';
-        } else if (currentHP <= 10) {
-            hpDisplay.style.color = '#e09952';
-        } else {
-            hpDisplay.style.color = 'var(--teal-bright)';
-        }
-    }
 
-    // Click HP display to set manually
-    hpDisplay.addEventListener('click', () => {
-        const input = prompt('Enter current HP:');
-        if (input !== null && !isNaN(parseInt(input))) {
-            currentHP = parseInt(input);
+        // HP tracker
+        let maxHP = null;
+        let currentHP = null;
+
+        // Try to get max HP from user (we'll just make it interactive)
+        const hpDisplay = document.getElementById('current-hp');
+
+        function changeHP(delta) {
+            if (currentHP === null) {
+                currentHP = 0;
+            }
+            currentHP = Math.max(0, currentHP + delta);
             hpDisplay.textContent = currentHP;
+
+            // Color feedback
+            if (currentHP === 0) {
+                hpDisplay.style.color = '#e05252';
+            } else if (currentHP <= 10) {
+                hpDisplay.style.color = '#e09952';
+            } else {
+                hpDisplay.style.color = 'var(--teal-bright)';
+            }
         }
-    });
-    hpDisplay.style.cursor = 'pointer';
-    hpDisplay.title = 'Click to set HP manually';
-</script>
+
+        // Click HP display to set manually
+        hpDisplay.addEventListener('click', () => {
+            const input = prompt('Enter current HP:');
+            if (input !== null && !isNaN(parseInt(input))) {
+                currentHP = parseInt(input);
+                hpDisplay.textContent = currentHP;
+            }
+        });
+        hpDisplay.style.cursor = 'pointer';
+        hpDisplay.title = 'Click to set HP manually';
+    </script>
 </body>
+
 </html>
