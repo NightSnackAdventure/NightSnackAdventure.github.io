@@ -1,251 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Those Who Shaped Him - Elutherius Aurum</title>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Spectral:wght@300;400;600;700&family=Cinzel:wght@400;600;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --teal: #0d9488;
-            --teal-bright: #14b8a6;
-            --teal-dark: #0f766e;
-            --charcoal: #2d2d2d;
-            --slate: #475569;
-            --warm-gray: #57534e;
-            --bg-dark: #1a1a1a;
-            --bg-medium: #2a2a2a;
-            --accent-gold: #fbbf24;
-            --text-light: #e2e8f0;
-            --text-muted: #94a3b8;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--charcoal) 50%, var(--bg-dark) 100%);
-            color: var(--text-light);
-            font-family: 'Spectral', serif;
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(13, 148, 136, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(20, 184, 166, 0.08) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .container {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 4rem;
-            padding-bottom: 2rem;
-            border-bottom: 2px solid var(--teal);
-            position: relative;
-        }
-
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 2px;
-            background: var(--teal-bright);
-            box-shadow: 0 0 20px var(--teal-bright);
-        }
-
-        .title {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2rem, 6vw, 3rem);
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--teal-bright), var(--teal));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-        }
-
-        .subtitle {
-            font-family: 'Libre Baskerville', serif;
-            font-size: clamp(1.2rem, 3vw, 1.6rem);
-            font-style: italic;
-            color: var(--text-muted);
-            letter-spacing: 0.15em;
-        }
-
-        .prose-section {
-            background: rgba(42, 42, 42, 0.6);
-            backdrop-filter: blur(10px);
-            border-left: 4px solid var(--teal);
-            border-radius: 8px;
-            padding: 2.5rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 0.8s ease-out backwards;
-        }
-
-        .prose-section:nth-child(odd) {
-            border-left-color: var(--teal-dark);
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .prose-section:nth-child(2) { animation-delay: 0.1s; }
-        .prose-section:nth-child(3) { animation-delay: 0.2s; }
-        .prose-section:nth-child(4) { animation-delay: 0.3s; }
-        .prose-section:nth-child(5) { animation-delay: 0.4s; }
-        .prose-section:nth-child(6) { animation-delay: 0.5s; }
-        .prose-section:nth-child(7) { animation-delay: 0.6s; }
-        .prose-section:nth-child(8) { animation-delay: 0.7s; }
-        .prose-section:nth-child(9) { animation-delay: 0.8s; }
-
-        h2 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(1.8rem, 4vw, 2.4rem);
-            font-weight: 500;
-            color: var(--teal-bright);
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.05em;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 2px;
-            background: linear-gradient(90deg, var(--teal-bright), transparent);
-        }
-
-        h3 {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 1.4rem;
-            font-weight: 500;
-            color: var(--teal);
-            margin: 2rem 0 1rem;
-            font-style: italic;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-            font-size: 1.15rem;
-            color: var(--text-light);
-            text-indent: 2em;
-            line-height: 1.9;
-        }
-
-        p:first-of-type {
-            text-indent: 0;
-        }
-
-        p:first-of-type::first-letter {
-            font-family: 'Cinzel', serif;
-            font-size: 4rem;
-            line-height: 1;
-            float: left;
-            margin: 0.1em 0.1em 0 0;
-            color: var(--teal-bright);
-            font-weight: 500;
-        }
-
-        .quote {
-            background: linear-gradient(135deg, rgba(13, 148, 136, 0.1), rgba(20, 184, 166, 0.05));
-            border-left: 4px solid var(--teal-bright);
-            padding: 1.5rem 2rem;
-            margin: 2rem 0;
-            font-style: italic;
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            text-indent: 0 !important;
-            border-radius: 4px;
-        }
-
-        .quote::before {
-            content: '"';
-            font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            color: var(--teal);
-            opacity: 0.5;
-            line-height: 0;
-            margin-right: 0.5rem;
-        }
-
-        em {
-            color: var(--teal-bright);
-            font-style: italic;
-        }
-
-        strong {
-            color: var(--teal-bright);
-            font-weight: 500;
-        }
-
-        footer {
-            text-align: center;
-            padding: 3rem 2rem;
-            margin-top: 4rem;
-            border-top: 2px solid var(--teal-dark);
-            color: var(--text-muted);
-            font-style: italic;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 2rem 1rem;
-            }
-
-            .prose-section {
-                padding: 1.5rem;
-            }
-
-            p {
-                text-indent: 1em;
-            }
-        }
-
-        @media (prefers-reduced-motion: no-preference) {
-            .prose-section {
-                opacity: 0;
-                animation: fadeIn 1s ease-out forwards;
-            }
-        }
-    </style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Spectral:wght@300;400;600;700&family=Cinzel:wght@400;600;900&display=swap"
+        rel="stylesheet">
+        <style>
+            @import "styles.css";
+        </style>
 </head>
+
 <body>
     <div class="container">
         <header class="header">
@@ -255,185 +22,315 @@
 
         <section class="prose-section">
             <h2>Regina Aurum</h2>
-            <h3>Mother • Queen of a Hot Mess Kingdom</h3>
+            <h3>Mother</h3>
 
-            <p>Regina means queen, and she has always known it. Not the kind of queen who inherits a stable throne, but the kind who rules over chaos and manages it through sheer force of will. Her authority is not conditional—she does not become queen through achievement or lose it through failure. She simply is, in the way that fundamental facts are true regardless of circumstance.</p>
+            <p>Regina means queen, and she has always known it. Her authority is not
+                conditional—she does not become queen through achievement or lose it through failure. She simply is, in
+                the way that fundamental facts are true regardless of circumstance.</p>
 
-            <p>She gave Therius the impulsiveness. The restlessness, the inability to leave well enough alone, the need for motion that makes sitting still feel like suffocation. In her, these qualities are contained—not eliminated, but channeled into purposeful action. She understands exactly why he is the way he is, which does not mean she knows what to do about it. Understanding and fixing are different problems, and she has learned the difference.</p>
+            <p>She gave Therius the impulsiveness. The restlessness, the inability to leave well enough alone, the need
+                for motion that makes sitting still feel like suffocation. In her, these qualities are contained—not
+                eliminated, but channeled into purposeful action. She understands exactly why he is the way he is, which
+                does not mean she knows what to do about it. Understanding and fixing are different problems, and she
+                has learned the difference.</p>
 
-            <p>She can be terrifying. The kind of presence that changes the temperature of a room when she enters it, that makes administrators reconsider their positions and faculty members choose their words more carefully. She has a temper that runs hot and burns clean, leaving no lingering resentment once it passes. She will defend her children with the ferocity of someone who considers attacks on them to be attacks on her kingdom, and she does not negotiate with people she has decided are threats.</p>
+            <p>She can be terrifying. The kind of presence that changes the temperature of a room when she enters it,
+                that makes administrators reconsider their positions and faculty members choose their words more
+                carefully. She has a temper that runs hot and burns clean, leaving no lingering resentment once it
+                passes.</p>
 
-            <p>She is also capable of tremendous warmth. The kind of mother who will stay up late helping with research, who remembers preferences and particular anxieties, who loves in practical ways that solve problems before they become crises. When Therius was young, she would intercept his father's disappointment with her body, taking the brunt of Lawrence's lectures herself and then privately delivering her own version—sharper, shorter, and followed by reassurance that he was still loved.</p>
+            <p>She is also capable of tremendous warmth. The kind of mother who will stay up late helping with research,
+                who remembers preferences and particular anxieties, who loves in practical ways that solve problems
+                before they become crises. When Therius was young, she would intercept his father's disappointment with
+                her body, taking the brunt of Lawrence's lectures herself and then privately delivering her own
+                version—sharper, in some ways more cutting, but followed by reassurance that he was still loved.</p>
 
-            <p>After the incident, she made calls. Quietly, efficiently, without asking permission. She contacted a relative on Lawrence's side—someone with connections in the gray markets, someone who owed the family favors—and acquired the Staff of Charming. She presented it to Therius wrapped in cloth, saying only "for your research" with complete sincerity and no further comment. She did not mention the incident. She did not need to. The staff said everything.</p>
+            <p>After the incident, she made calls. Quietly, efficiently, without asking permission. She contacted a
+                relative on her husband's side—the one in possession of a specific family heirloom: the Staff of Charming.
+                The staff had never been on the table for Elutherius, the black seep of the family.
+                But Regina Aurum wasn't asking. She presented it to Therius wrapped in cloth, saying only
+                "for your research" with complete sincerity and no further comment. She did not mention the incident.
+                She did not need to.</p>
 
-            <p>They do not talk much now. He knows why—talking to her eventually means talking about his father, and that conversation has no good ending. She would forgive him anything. She probably already has. But forgiveness from her has never been the problem. The problem is that she cannot protect him from Lawrence's disappointment, and they both know it, and discussing it only makes the knowledge heavier.</p>
-
-            <p>When Therius lies awake at three in the morning, unable to sleep, he sometimes thinks about the fact that his mother negotiated with her husband's family to get him magical protection against charm effects. He thinks about what it cost her to make those calls. He thinks about the fact that she understood what he needed before he did, and that being known that completely is both comforting and unbearable.</p>
+            <p>She still writes to him. Every week, without fail, he receives a carefully crafted letter from her.
+                It pains him to read them, but it would pain him more not to. He only responds every couple of months, briefly,
+                just to let her know he's still alive and working on his research. He carries guilt for not writing more often. But, in his own words,
+                "Dont you think I've already hurt her enough?"
+            </p>
         </section>
 
         <section class="prose-section">
             <h2>Lawrence Aurum</h2>
-            <h3>Father • The Withering Crown</h3>
+            <h3>Father</h3>
 
-            <p>Lawrence means crowned with laurel—victorious, celebrated, recognized for achievement. The laurel crown is not inherent. It must be earned through victory, and once earned, it begins immediately to wither. This is the principle by which Lawrence Aurum has organized his entire life, and it has made him smaller than he used to be.</p>
+            <p>Lawrence means crowned with laurel—victorious, celebrated, recognized for achievement. The laurel crown
+                is not inherent. It must be earned through victory, and once earned, it begins immediately to wither.
+                This is the principle by which Lawrence Aurum has organized his entire life, and it has made him smaller
+                than he used to be.</p>
 
-            <p>He was different when Regina married him. Ambitious in the way that opens doors rather than closes them. Brilliant enough that his confidence felt earned rather than defensive. He had vision then—could see not just what was, but what could be—and the drive to make it real. The hunger was productive. It made him impressive.</p>
+            <p>Lawrence Aurum offers approval conditionally. When his son Marcus publishes, Lawrence is proud—vocally,
+                publicly proud in the way that costs him nothing because it reflects well on the family. When Olivia, her youngest,
+                chose architecture, he was quietly relieved—she found a different arena, no longer a variable in the
+                calculation of the family's academic standing. When Therius causes problems, Lawrence experiences it as
+                personal failure. Every incident is evidence that something in the family mechanism is broken, and
+                broken things threaten the stability of everything.</p>
 
-            <p>Then he succeeded. Department head. Published researcher. Tenured professor at a prestigious institution. Everything he had worked toward. And the achievement, instead of satisfying the hunger, revealed that the hunger had never been about the achievement at all. It had been about the pursuit, and once the pursuit ended, what remained was only the fear of losing what had been won.</p>
+            <p>He does not mean to be cruel. He genuinely believes he is helping. Consequences build character. High
+                standards produce excellence. These are principles he has organized his life around, and they have
+                worked for him, so they should work for his sons. That they have not worked for Therius is not a flaw in
+                the principles but in Therius, and if Therius would simply try harder, apply himself more seriously,
+                care about his reputation the way Marcus does—</p>
 
-            <p>Now he is trapped in maintenance. Every paper he publishes is defense against obsolescence. Every lecture is proof he still belongs. He cannot rest because rest means the laurel continues withering while he does nothing, and he cannot imagine himself as anything other than the man wearing the crown. The identity and the achievement have fused so completely that he has forgotten which came first.</p>
-
-            <p>With his children, he offers approval conditionally. When Marcus publishes, Lawrence is proud—vocally, publicly proud in the way that costs him nothing because it reflects well on the family. When Olivia chose architecture, he was quietly relieved—she found a different arena, no longer a variable in the calculation of the family's academic standing. When Therius causes problems, Lawrence experiences it as personal failure. Every incident is evidence that something in the family mechanism is broken, and broken things threaten the stability of everything.</p>
-
-            <p>He does not mean to be cruel. He genuinely believes he is helping. Consequences build character. High standards produce excellence. These are principles he has organized his life around, and they have worked for him, so they should work for his sons. That they have not worked for Therius is not a flaw in the principles but in Therius, and if Therius would simply try harder, apply himself more seriously, care about his reputation the way Marcus does—</p>
-
-            <p>He does not understand that Therius has tried. That the trying made things worse. That some people are not built to pursue withering crowns, and the attempt to make them pursue anyway creates pressure that eventually finds an outlet. Lawrence sees only the outcome: a son who embarrassed the family, who left rather than facing consequences, who now lives on another continent and rarely writes.</p>
-
-            <p>They are partners, he and Regina. Functional, respectful, effective at managing the household and presenting a united front at university functions. He knows he is lucky to have her. She handles the emotional labor he is not equipped for, manages the children's feelings, protects them from his disappointment in ways he does not fully recognize but dimly appreciates. It is a good partnership. It works. He does not examine whether it is enough because examining leads to questions he does not have answers for, and questions without answers feel like failure.</p>
-
-            <p>Therius does not think about his father often. When he does, it is usually in the context of decisions he is making—the small voice asking whether this choice will seem foolish, whether the outcome will justify the risk, whether he is about to do something that will require explanation and defense. He has his father's voice in his head, the catalog of disappointments and corrections, and he is still deciding whether to ignore it entirely or to prove it wrong through sheer force of achievement. Both options feel like letting Lawrence win.</p>
+            <p>Therius has not been in contact with his father after he left, neither has his mother asked him to.
+                He believes his father is content with this arrangement.</p>
         </section>
 
         <section class="prose-section">
             <h2>Marcus Aurum</h2>
             <h3>Older Brother • The One Who Made It Look Easy</h3>
 
-            <p>Marcus is a conjuration specialist, which is somehow both predictable and perfect. Conjuration is the domesticated cousin of evocation—still impressive, still powerful, but controllable in ways that make it suitable for polite society. He summons creatures that follow instructions. He creates objects that serve clear purposes. His magic is useful, reliable, and does not occasionally set things on fire by accident.</p>
+            <p>Marcus, Therius's older brother, is a conjuration specialist. He's at least as brilliant as him, without the uncontrollable chaos that follows Therius.
+                Marcus has his mother's fire, but in him it manifests as charming spontaneity, rather than the destructive force of his younger brother.
+                He's creative. Eloquent. Whimsical, in a controlled, tasteful way.
+                He was everything Therius couldn't be. Still is, in many ways.
+            </p>
 
-            <p>As children, they were close. Fought constantly in the way siblings do, but also played together, caused trouble together, developed the kind of shorthand that comes from growing up in the same house with the same parents. Marcus was the one who taught Therius the minor illusion cantrip that got them both grounded for a week. Therius was the one who convinced Marcus to sneak into their father's study to look at the restricted texts, which they both now agree was a poor decision but also genuinely educational.</p>
+            <p>As children, they were close. Fought constantly in the way siblings do, but also played together, caused
+                trouble together, developed the kind of shorthand that comes from growing up in the same house with the
+                same parents. Marcus was the one who taught Therius the minor illusion cantrip that got them both
+                grounded for a week. Therius was the one who convinced Marcus to sneak into their father's study to look
+                at the restricted texts, which they both now agree was a poor decision but also genuinely educational.
+            </p>
 
-            <p>The distance started in their teenage years, when academic performance began to matter in ways it had not before. Marcus was brilliant—genuinely, effortlessly brilliant in the way that makes things look easy even when they are not. He also had Regina's charm without Therius's chaos. He could be spontaneous in ways that seemed whimsical rather than disruptive, could take risks that came across as bold rather than reckless. People liked him. Professors liked him. Everything he did seemed to confirm that he belonged.</p>
+            <p>The distance started in their teenage years, when academic performance began to matter in ways it had not
+                before. Marcus was brilliant—genuinely, effortlessly brilliant in the way that makes things look easy
+                even when they are not. He also had Regina's charm without Therius's chaos. He could be spontaneous in
+                ways that seemed whimsical rather than disruptive, could take risks that came across as bold rather than
+                reckless. People liked him. Professors liked him. Everything he did seemed to confirm that he belonged.
+            </p>
 
-            <p>Therius was measured against this. Not explicitly—no one said "why can't you be more like your brother"—but the comparison was there in every conversation, every assessment, every time Marcus succeeded at something Therius had struggled with. And Therius could not help but resent it, even though Marcus had done nothing to deserve the resentment except exist and be good at existing.</p>
+            <p>Therius was measured against this. "Why can't you be more like Marcus?" The words were only said out loud a few times,
+                but that was enough to leave a lasting impression. The shadow of comparison was there in every conversation, every assessment, every time Marcus
+                succeeded at something Therius had struggled with. And Therius could not help but resent it, even though
+                Marcus had done nothing to deserve it.</p>
 
-            <p>Marcus noticed. How could he not? At some point he made a choice—probably unconscious, probably gradual—to care about his reputation at school. To protect it. And protecting it meant creating distance from the brother who kept getting into situations that required explanation. Not cutting contact, nothing so dramatic. Just becoming polite where he had been close. Friendly where he had been intimate. The kind of brother you have dinner with at family events but do not call when something goes wrong.</p>
+            <p>Marcus, meanwhile, at some point made a choice—probably unconscious, probably
+                gradual—to care about his reputation at school. To protect it. And protecting it meant creating distance
+                from the brother who kept getting into situations that required explanation. Not cutting contact,
+                nothing so dramatic. Just becoming polite where he had been close. Friendly where he had been intimate.
+                The kind of brother you have dinner with at family events but do not call for when something goes wrong.</p>
 
-            <p>They are not estranged. The relationship is not hostile. It is simply carefully managed, bounded by conventions that keep it comfortable and prevent either of them from addressing the fact that there is a rift and they both know it exists and they are both choosing not to repair it. When they see each other now, they ask about research and make small talk and avoid anything that might require actual vulnerability.</p>
-
-            <p>Therius knows Marcus has his own pressures. The expectations that come with being the successful son, the need to maintain the image, the weight of being the one their father can point to as proof that the family produces excellent wizards. He knows Marcus probably struggles in ways that are invisible to him. He still cannot make himself reach out. The gap is too wide now, and crossing it would require acknowledging how much it hurts that Marcus pulled away, and Therius is not ready for that conversation.</p>
-
-            <p>Sometimes he wonders what would happen if he showed up at Marcus's door with a bottle of wine and said "I miss you." Whether Marcus would slam the door or let him in. Whether they could find their way back to something that felt like brotherhood instead of this polite performance of fraternal obligation. He has not tried. He tells himself he is respecting Marcus's choice. He suspects he is just afraid of the answer.</p>
+            <p>The relationship is carefully managed, bounded by
+                conventions that keep it comfortable and prevent either of them from addressing the fact that there is a
+                rift, although they both know it exists, and they are both choosing not to repair it. When they see each other
+                now, they ask about research and make small talk and avoid anything that might require actual
+                vulnerability.</p>
         </section>
 
         <section class="prose-section">
             <h2>Olivia Aurum</h2>
-            <h3>Younger Sister • The One Who Found Another Way</h3>
+            <h3>Younger Sister</h3>
 
-            <p>Olivia was the charming one. Still is, probably. The youngest child who learned early how to deploy cuteness strategically, how to get away with things through sheer force of personality, how to make adults smile even when she had just done something technically against the rules. She was clever in ways that felt delightful rather than threatening. When she asked questions, people wanted to answer them. When she broke things, people wanted to help her fix them.</p>
+            <p>Olivia was the charming one. Still is, probably. The youngest child who learned early how to deploy
+                cuteness strategically, how to get away with things through sheer force of personality, how to make
+                adults smile even when she had just done something technically against the rules. She was clever in ways
+                that felt delightful rather than threatening. When she asked questions, people wanted to answer them.
+                When she broke things, people wanted to help her fix them.</p>
 
-            <p>Her talent turned out to be architecture. Not magic—or not primarily magic. She uses some minor enchantments in her work, but her real gift is for understanding how spaces work, how buildings should be shaped to serve the people who inhabit them, how form and function can be married in ways that feel both practical and beautiful. She designs homes, public buildings, the physical infrastructure of cities. Her work is permanent in ways that spellwork is not.</p>
+            <p>Her talent turned out to be architecture. Not magic—or not primarily magic. 
+                Their parents were delighted. Lawrence, because her success reflected well on the family and required no
+                comparison to his own work. Regina, because Olivia had found something she loved that would not consume
+                her the way magic can consume practitioners. Both of them, because she had chosen a path that was
+                impressive without being dangerous, that would give her stability and respect without the chaos that
+                seems to follow wizards who push boundaries.</p>
 
-            <p>Their parents were delighted. Lawrence, because her success reflected well on the family and required no comparison to his own work. Regina, because Olivia had found something she loved that would not consume her the way magic can consume practitioners. Both of them, because she had chosen a path that was impressive without being dangerous, that would give her stability and respect without the chaos that seems to follow wizards who push boundaries.</p>
+            <p>When they were young—before Marcus pulled away, before Therius started accumulating incidents—Olivia and
+                Therius were co-conspirators. She was the lookout while he picked the lock on their father's study. He
+                was the distraction while she smuggled pastries from the kitchen. They had the kind of partnership that
+                comes from being the two youngest, the two who were not Marcus, the two who had to make their own
+                entertainment while the golden child was off being golden.</p>
 
-            <p>When they were young—before Marcus pulled away, before Therius started accumulating incidents—Olivia and Therius were co-conspirators. She was the lookout while he picked the lock on their father's study. He was the distraction while she smuggled pastries from the kitchen. They had the kind of partnership that comes from being the two youngest, the two who were not Marcus, the two who had to make their own entertainment while the golden child was off being golden.</p>
+            <p>Then she grew up. Not all at once, but gradually, in the way that happens around twelve or thirteen when
+                children start noticing social dynamics and caring about consequences. She began to understand that
+                while her chaos was charming, his was becoming genuinely concerning. That the incidents he caused had
+                weight, left damage, required cleanup that affected the whole family. She did not stop loving him. She
+                simply stopped being his accomplice.</p>
 
-            <p>Then she grew up. Not all at once, but gradually, in the way that happens around twelve or thirteen when children start noticing social dynamics and caring about consequences. She began to understand that while her chaos was charming, his was becoming genuinely concerning. That the incidents he caused had weight, left damage, required cleanup that affected the whole family. She did not stop loving him. She simply stopped being his accomplice.</p>
+            <p>She has written him a few times. She's told him about her projects. The library she is designing
+                for a small city north of the old capital. The house she is renovating that has structural problems no
+                one noticed until she examined the foundations. She asked about his research, in that careful sideways way
+                that actually wants to know how he is feeling, but is being gracious about it. He didn't tell her about the fighting rings
+                or the potions. He simply summarized his progress on his research, and told her his pillow is uncomfortable.</p>
 
-            <p>The divergence happened around the same time she discovered architecture, which was probably not coincidence. She found something that was hers—not magic, not the family tradition, not another arena where she would be compared to her brothers. And having found it, she invested in it completely. Poured herself into learning, into designing, into building a reputation in a field where the Aurum name meant nothing and she could be judged on her work alone.</p>
-
-            <p>Now when she visits, or when she writes, she tells him about her projects. The library she is designing for a small city north of the old capital. The house she is renovating that has structural problems no one noticed until she examined the foundations. She asks about his research in that bright, careful way that stays safely in the realm of academia and does not venture into anything personal. She does not ask about the fighting rings. She does not ask if he is sleeping well, or eating properly, or whether he has friends in Adanesne. She keeps the conversation in the safe zone, and he is grateful and resentful in equal measure.</p>
-
-            <p>She is the only family member he does not feel measured against. She found a different arena, plays a different game, succeeds by different metrics. This should make things easier. Instead it makes him feel lonely in ways he does not fully understand. They used to be close. They used to be allies. Now they are friendly strangers who share parents and childhood memories and very little else.</p>
-
-            <p>He wonders sometimes if she thinks about him the way he thinks about her. Whether she misses the partnership they used to have, or whether she has moved on completely and is simply being polite when she writes. Whether the gap between them could be crossed if one of them tried, or whether they have become too different—her building permanent structures, him chasing temporary thrills—and the childhood closeness cannot be recovered. He does not know how to ask without making it weird. So he writes back about his research, keeps his tone light, and does not mention that he misses her.</p>
         </section>
 
         <section class="prose-section">
-            <h2>Meredith Ashford</h2>
+            <h2>Meredith Coven</h2>
             <h3>The One He Did Not Love Enough</h3>
 
-            <p>Meredith came from another old wizarding family. Illusion magic ran in her bloodline the way evocation ran in his—not a choice so much as an inheritance, though she had taken to it with genuine enthusiasm rather than obligation. Their families knew each other, moved in the same social circles, attended the same university functions. The relationship was almost inevitable, which should have been a warning but felt instead like confirmation that it was meant to be.</p>
+            <p>Meredith came from another old wizarding family. Their families knew each other, moved in the same social circles, attended the
+                same university functions. The relationship was almost inevitable, which should have been a warning but
+                felt instead like confirmation that it was meant to be.</p>
 
-            <p>She had strawberry blonde hair that caught light in ways that made him think of sunset, and blue eyes that were sharper than most people noticed at first glance. She was kind—genuinely, consistently kind in ways that cost her something. She would clean up other people's messes when she did not have to. She would listen to problems she had no obligation to solve. She saw good in people even when the evidence suggested she should not, and she held onto that vision with stubborn determination.</p>
+            <p>She had strawberry blonde hair and bright blue eyes. She was kind—genuinely kind, even when it
+                cost her something. She would clean up other people's messes when she did not have to. She
+                would listen to problems she had no obligation to solve. She saw good in people even when the evidence
+                suggested she should not, and she held onto that vision with stubborn determination.</p>
 
-            <p>Her magic reflected this. She created beautiful things—timelapses of flowers blooming, baby unicorns taking their first steps, music boxes that played melodies matching the listener's mood. She wrote in colored ink and drew hearts in the margins of her journals. She had a St. Burmese cat named Diva who tolerated Therius's presence but made clear through consistent cold shoulder that he was not welcome in her hierarchy. The cat always came first. He learned to accept this.</p>
+            <p>She was also volatile and prone to insecurity. Would have moments of doubt, emotional instability that she managed as well as
+                she could. She threw tantrums occasionally—not often, but enough that he learned to recognize the
+                signs—and then apologized profusely afterwards, sometimes overcorrecting into excessive accommodation.
+                She would sulk when hurt or jealous, but eventually offer a hug, testing whether he was still there, still willing
+                to work through it. And he always was, in those moments. It was only later, in the quiet between
+                incidents, that he would wonder whether he was staying because he loved her or because leaving felt
+                cruel.</p>    
 
-            <p>She wanted a life he could picture clearly. A tower with a garden, vines growing up the walls, flowers in colors she had not yet decided on but would spend hours debating. Children—two, probably, though she was open to negotiation. She had names picked out already, written in one of her journals alongside sketches of what the garden might look like. She was not in a rush. But she had a vision, and it included him, and she made space for him in it without demanding he confirm whether he wanted the same things.</p>
+            <p>But in her good moments, she was full of creative energy. She created beautiful illusions—timelapses of flowers blooming, baby unicorns
+                taking their first steps, music boxes that played melodies matching the listener's mood. She wrote in
+                colored ink and drew hearts in the margins of her journals. She had a St. Burmese cat named Diva who
+                tolerated Therius's presence but made clear through consistent cold shoulder that he was not welcome in
+                her hierarchy. The cat always came first. He learned to accept this.</p>
 
-            <p>He tried. This is important to understand. He tried to want what she wanted, to become the person who could give her the life she deserved. He tried to settle, to imagine himself in the tower with the garden and the children and the permanent stability of a life that had clear shape and purpose. He could picture it. He simply could not make himself want it the way she did.</p>
+            <p>She wanted a life he could picture clearly. A tower with a garden, vines growing up the walls, flowers in
+                colors she had not yet decided on but would spend hours debating. Children—two, probably, though she was
+                open to negotiation. She had names picked out already, written in one of her journals alongside sketches
+                of what the garden might look like. She was not in a rush. But she had a vision, and it included him,
+                and she made space for him in it without demanding he confirm whether he wanted the same things.</p>
 
-            <p>The problem was not that she was unkind or demanding or insufficiently understanding. The problem was precisely that she was lovely—genuinely, thoroughly lovely in ways that made her easy to be with but impossible to love correctly. She deserved someone who wanted her with the kind of certainty she offered in return. What she got was someone who kept wondering if what he felt was enough, if settling for "good enough" was the right choice or a betrayal of them both.</p>
+            <p>He tried. This is important to understand. He tried to want what she wanted, to become the person who
+                could give her the life she deserved. He tried to settle, to imagine himself in the tower with the
+                garden and the children and the permanent stability of a life that had clear shape and purpose. He could
+                picture it. He simply could not make himself want it the way she did.</p>
+            
+            <!-- beep boop -->
 
-            <p>She was slightly insecure. Would have moments of doubt, emotional instability that she managed as well as she could. She threw tantrums occasionally—not often, but enough that he learned to recognize the signs—and then apologized profusely afterwards, sometimes overcorrecting into excessive accommodation. She would sulk when hurt, but eventually offer a hug, testing whether he was still there, still willing to work through it. And he always was, in those moments. It was only later, in the quiet between incidents, that he would wonder whether he was staying because he loved her or because leaving felt cruel.</p>
+            <p>He sent the message via Magic Mouth before going to meet Saffron. Ended the relationship, used a second-level
+                spell, treated it like official business that required magical documentation. The spell delivered the
+                message to Meredith while she was in her study group. Not alone—she was never alone when she needed to
+                be, and he had not checked, had not thought to confirm—and the dissolution of their relationship became
+                public before she had processed it privately.</p>
 
-            <p>The incident with Mia provided an exit he had not been able to create himself. He knows this, even if he has never said it aloud. The succubus gave him a reason to end things that was about his own failure rather than Meredith's inadequacy. He could be the villain—the one who cheated, who broke trust, who deserved her anger—instead of the person who slowly, carefully explained that he did not love her enough and never would.</p>
+            <p>He thinks about this more than he should. The fact that she had to hear "we're done" in front of her
+                peers, that she had to manage her reaction with witnesses, that the humiliation was compounded by
+                publicity. He had tried to be clean about it—to end things before anything else happened, to give her
+                the technical truth that he had not physically cheated—but clean and kind are not the same thing, and
+                the method he chose was efficient at the cost of being devastatingly unkind.</p>
 
-            <p>He sent the message via Magic Mouth before going to meet Mia. Ended the relationship, used a second-level spell, treated it like official business that required magical documentation. The spell delivered the message to Meredith while she was in her study group. Not alone—she was never alone when she needed to be, and he had not checked, had not thought to confirm—and the dissolution of their relationship became public before she had processed it privately.</p>
-
-            <p>He thinks about this more than he should. The fact that she had to hear "we're done" in front of her peers, that she had to manage her reaction with witnesses, that the humiliation was compounded by publicity. He had tried to be clean about it—to end things before anything else happened, to give her the technical truth that he had not physically cheated—but clean and kind are not the same thing, and the method he chose was efficient at the cost of being devastatingly unkind.</p>
-
-            <p>She might have the garden now. The tower. The two children with names from her list. Diva is probably still there, older, still ruling her small kingdom with the same dismissive authority. Therius hopes Meredith found someone who wants what she wants, who looks at her vision of the future and sees something they desire rather than something they are trying to convince themselves to accept. She deserved that. She deserved better than him. These facts are both true and do not make him feel less guilty about the way he ended things.</p>
+            <p>She might have the garden now. The tower. The two children with names from her list. Diva is probably
+                still there, older, still ruling her small kingdom with the same dismissive authority. Therius hopes
+                Meredith found someone who wants what she wants, who looks at her vision of the future and sees
+                something they desire rather than something they are trying to convince themselves to accept. She
+                deserved that. She deserved better than him. These facts are both true and do not make him feel less
+                guilty about the way he ended things.</p>
         </section>
 
         <section class="prose-section">
-            <h2>Mia</h2>
-            <h3>The One He Should Not Think About</h3>
+            <h2>The Crossroads</h2>
+            <h3>The Incident he's still running from</h3>
 
-            <p>Flaming locks of auburn hair. Eyes of emerald green. The description sounds like poetry or propaganda, and it is neither precisely accurate nor precisely wrong. She is beautiful, but that is not the thing about her. The thing about her is that she makes you feel seen in ways that are both intoxicating and terrifying, because the attention feels real and you know it cannot be, and the gap between those two facts is where the danger lives.</p>
+            <p>First there were only rumors. Then an official warning from faculty. Because of who he is a person, this immediately raised Therius' interest onto an unbearable level.
+                In retrospect, one might argue the cracks in his relationship with Meredith may have contributed to his stubborn desire to investigate.
+            </p>
 
-            <p>She is not what people imagine when they hear the word succubus. There is no sultry seductress, no creature of pure lust radiating obvious threat. Instead there is warmth. Genuine interest. The sense that she is paying attention—not performing attention, but actually caring about what you say, tracking the details, remembering what matters to you. This quality, cranked to eleven, creates a pull that feels less like magic and more like recognition. Like someone finally understanding you completely.</p>
+            <p>Naturally, she was bitterly jealous as he brought up his plan. He was not going to do anything weird, he insisted. He just thought he could convince her to hunt elsewhere.
+                And, naturally, he had a few questions only she could answer. It would be purely research. He had planned it thoroughly, studied the ways of Infernal laws, protected himself against charms.
+            </p>
 
-            <p>He had done the research. Read the literature on infernal contracts, charm magic, the mechanisms by which succubi operate. He knew the risks. He negotiated terms—explicit, carefully worded protections against direct harm and magical compulsion. He approached the situation as a researcher investigating a phenomenon poorly documented in the primary sources. The interest was, he maintains, at least forty percent academic. Possibly higher. The exact percentage is difficult to calculate in retrospect.</p>
+            <p>This was not good enough for Meredith. She pleaded with him not to go. When pleading didn't work, she exploded. She didn't kick him out of her apartment.
+                Instead, she left, slammed the door after her, not to return until the next afternoon.
+            </p>
 
-            <p>What the literature had not prepared him for was the possibility that the warmth might feel real. That she might laugh at his jokes in ways that seemed genuinely delighted rather than performed. That the conversations might flow with the kind of easy rhythm that usually takes months to develop. The technical term for this is "infernal manipulation of mortal attachment patterns." The experiential term is "it felt like she actually liked him," and the gap between those framings is the source of ongoing distress.</p>
+            <p>Therius made a decision. One that had been floating in his mind as a possibility for weeks, maybe months. He was not going to betray her, of course.
+                He was sure to avoid such unnecessarily cruelty. He would do everything in the proper order-he left a message, in his own voice, telling her it was over. Then he left her apartment.
+            </p>
 
-            <p>He took notes. Documented the physiological responses, the subtle shifts in perception, the way charm magic differs from arcane enchantment in its mechanisms and effects. The notes were valuable. They were also written largely after the fact, in an attempt to retroactively justify a decision he had already made for reasons that were not forty percent academic. He knows this. Knowing does not particularly help.</p>
-
-            <p>The terms of the contract were solid. He checked them carefully, had them reviewed by someone with expertise in infernal law, made sure there were no obvious loopholes that would give her claim to his soul or his service or any other standard succubus payment. He is reasonably confident—perhaps seventy percent confident, though the margin of error is uncomfortable—that she does not have a claim on him beyond what was explicitly negotiated.</p>
-
-            <p>This is not the thing that keeps him awake at three in the morning. The thing that keeps him awake is the fear that their paths will cross again. That she will appear in Adanesne, or that he will encounter her while traveling, or that one day he will turn a corner and she will be there with that same warmth, that same attention, that same terrible quality of making him feel understood. He does not trust himself to walk away. This is the honest assessment. He has calculated the odds and they are not in his favor.</p>
-
-            <p>Worse than the fear of seeing her again is the fear of other people finding out. The incident with Meredith was public enough that everyone in his old circles knows the outline—relationship ended badly, there was a succubus involved, he left town shortly after. The details, mercifully, remained private. If his new circles in Adanesne were to learn about it, if the whole story came out complete with his justifications and rationalizations and the careful contract negotiations, the humiliation would be worse than anything that happened in his previous city.</p>
-
-            <p>He has filed Mia under "known risks, low probability of occurrence, nothing actionable at this time." This is the same category he uses for experimental spells with unpredictable outcomes and cursed items with incomplete documentation. The methodology is consistent even if the subject matter is somewhat different. He does not think about whether using the same risk-assessment framework for both magical research and infernal encounters suggests something about his decision-making processes. He has enough to worry about without adding that to the list.</p>
-
-            <p>Sometimes he wonders if she thinks about him at all. Whether he was memorable or simply one of many, whether the warmth was pure performance or whether some small fraction of it was real. He knows better than to entertain these thoughts. They lead nowhere useful. But at three in the morning, when sleep will not come and the thoughts run in circles, he thinks about her anyway. About whether she knew the contract would not protect him from this particular form of damage. About whether that was the point all along.</p>
+            <p>He's imagined how the events of the next afternoon went down many times. Meredith would have returned to her apartment with her study group.
+                Immediately as they stepped in, they would have heard Therius' voice, and realized it was coming from the statuette. A marble horse head; Meredith's favorite,
+                which she always kept on the shelf over her bed. In retrospect, he should have probably used a different object.
+            </p>
+            <p>They would have listened in silence as his voice told her it was over. That he was sorry. Then, they would have heard him hesitate for a moment as he was casting,
+                as he decided he could trust Meredith and she deserved to know the truth. They would have heard the words, "I am going to see the succubus." Straight from the horse's mouth.
+            </p>
         </section>
 
         <section class="prose-section">
-            <h2>Corin Westfall</h2>
-            <h3>The Friend Who Could Not Stay</h3>
+            <h2>Saffron</h2>
+            <h3>The Catalyst</h3>
 
-            <p>They met first year, in the kind of collision that happens when two ambitious students reach for the same library book at the same time. Corin was an illusion specialist—already committed to the school by then, already showing the particular brand of creativity that makes for good illusionists. They were different enough that there was no direct competition, similar enough that they understood what drove each other. The friendship formed quickly, the way things do when you are young and away from home and desperately need someone who gets it.</p>
+            <p>Flaming, curly locks of auburn. Ivory skin. Eyes of emerald green. She was physically beautiful and stacked in defiance of the gods, but that was the least
+                dangerous thing about her.</p>
 
-            <p>Corin thought Therius's chaos was entertaining. Not in the way people do when they are watching a disaster from a safe distance, but genuinely—he appreciated the energy, the refusal to do things the boring way, the commitment to direct experimentation even when the outcomes were unpredictable. He was the one who would say "absolutely do not do that" while also positioning himself to get a good view when Therius inevitably did it anyway. He took notes on the explosions. He helped clean up afterwards. He did not judge, which at the time felt like the most valuable thing anyone could offer.</p>
+            <p>She was not what people imagine when they hear the word succubus. There was no sultry seductress, no
+                creature of pure lust radiating obvious threat. Instead there was warmth. Genuine interest. The sense
+                that she was paying attention—not performing attention, but actually caring about what you say, tracking
+                the details, remembering what matters to you. This quality, cranked to eleven, felt natural-if it wasn't for the sheer
+                intensity of it that, in hindsight, was out of place.</p>
 
-            <p>The friendship survived the usual university chaos—the late nights, the academic pressures, the social recalibrations that happen as people figure out who they are and who they want to be. Corin knew about Meredith. Was present for the slow deterioration of that relationship, watched Therius try to be someone he was not, offered opinions when asked and kept quiet when not. He was a good friend in the way that matters: reliable, honest, willing to tell difficult truths when they needed saying.</p>
+            <p>He had done the research. Read the literature on infernal contracts, charm magic, the mechanisms by which
+                succubi operate. He knew the risks. He negotiated terms—explicit, carefully worded protections against
+                direct harm and magical compulsion. He approached the situation as a researcher investigating a
+                phenomenon poorly documented in the primary sources. He was the one making her sign a contract, not the other way around.
+                He felt so clever about it, too.</p>
 
-            <p>After the incident, things changed. Not immediately—Corin tried to maintain the friendship, showed up at Therius's door with takeout and sympathy, said the right things about how everyone makes mistakes and this would pass eventually. But the social pressure was enormous. People kept asking Corin if he had known it was coming, if there had been warning signs he missed, whether he felt complicit for not intervening. The questions implied that staying friends was itself a statement, a choice that reflected on his judgment and character.</p>
+            <p>The terms of the contract were solid. He checked them carefully, 
+                made sure there were no obvious loopholes that would give her claim to his
+                soul or his service or any other standard succubus payment. He was especially clear that no charm magic would be used on him.
+                He felt confident to proceed with his plan.</p>
 
-            <p>Corin was building his own reputation. Working toward positions that required social credibility, networking with people who made decisions about fellowships and research grants and teaching positions. The friendship with Therius had always been slightly risky—associated with someone whose chaos made administrators nervous—but the risk had been manageable as long as the chaos stayed contained. After the incident, the risk calculation changed. Maintaining the friendship cost something concrete, and the cost kept increasing as the story spread and calcified into legend.</p>
+            <p>What the literature had not prepared him for was the possibility that the warmth might feel real. That
+                she might laugh at his jokes in ways that seemed genuinely delighted rather than performed. That the
+                conversations might flow with the kind of easy rhythm that usually takes months to develop. The
+                technical term for this is "infernal manipulation of mortal attachment patterns." The experiential term
+                is "it felt like she actually liked him," and the gap between those framings is the source of ongoing
+                distress.</p>
 
-            <p>The last real conversation was stilted in ways that previous conversations had never been. They both knew what was happening. Corin did not say "I cannot be your friend anymore" because that would have required honesty neither of them was prepared for. Instead he said things like "this is a complicated time" and "maybe some distance would help" and other phrases that meant the same thing while preserving the fiction that the friendship was just on pause rather than ending. Therius, for his part, made it easy. Said "take care of yourself" and meant it, and left before the conversation could become more painful.</p>
+            <p>He was, of course, never foolish enough to believe any of it was real. That would have been the interplanar equivalent
+                of thinking a stripper is in love with you. He had only ever been a potential target, nothing more.
+                Never mind the fact that such sophisticated emulation of warmth was unprecedented. Nevermind that
+                his nervous system reacted as if it was real. It was all a mirage.</p>
 
-            <p>He does not blame Corin. This is important to be clear about. Corin made a rational choice given his circumstances and priorities. The friendship was not worth the professional cost, and that is a reasonable calculation for someone with career ambitions and a functional sense of self-preservation. Therius has made similar calculations himself. He understands the math.</p>
+            <p>Whatever happened that night, he never told anyone. He had meant to talk about his findings eventually, of course.
+                But that was all before he found out what had transpired at Meredith's apartment. He returned to the university, and found himself
+                known as the one who'd betrayed his girlfriend for a succubus. A wizard who couldn't resist Infernal temptation. Unreliable, untrustworthy,
+                and a danger to everyone around him. And when both your families are well-known and connected, the world is a small place. It didn't take many days,
+                until there was not a wizard in the city who didn't know about Therius, the Succubus Guy. His peers. Faculty. His own family.
+            </p>
 
-            <p>Understanding does not make it hurt less. There is something particular about being weighed and found wanting, about watching someone decide in real time that you are not worth the trouble. The loss of the friendship was compounded by the knowledge that he had forced Corin into a position where that choice was necessary. If he had been less of a disaster, if he had managed his impulses better, if he had not created a situation that became public gossip, Corin would not have had to choose.</p>
+            <p>He tried to defend himself. But he soon realized there was no acceptable defense for what he did.
+                He stuck with the explanation that it was premeditated. That he had most definitely not been charmed.
+                He had been in control, executed his plan, gotten what he wanted.
+                This did not actually look any better than having a lapse of judgement.
+                He still fiercely maintains he was not charmed. His mother is the only one who believes him.
+                She was still, rightfully, furious, and then emotionally distraught for a long time.
+            </p>
 
-            <p>Sometimes Therius wonders if Corin thinks about him. Whether he regrets the ending, or whether he has moved on completely and filed the friendship under "mistakes from my youth." Whether they could reconnect if circumstances were different, or whether too much time has passed and the gap is now too wide to cross. He does not reach out. Partly because he respects Corin's choice, partly because he is afraid of the answer. Easier to remember the friendship as it was than to test whether anything remains.</p>
+            <p>What he told no one about, not even his mother, was the piece of paper he had signed.
+                He'd tossed it into a lake, in a box along with his notes about the encounter, immediately after he learned about his new public standing.
+                He's gone on with his life, pretending it never existed.</p>
+
+            <p>He came to Adanesne for a new beginning, yet his past still haunts him from the inside.
+                He's terrified of it coming out, to tarnish his reputation once more. He takes precautions to prevent anything similar
+                from getting to him again. He has developed a fear of being charmed and losing control,
+                of what that would do to others' perceptions of him. His usual recklessness gives way to caution whenever anything Infernal is involved.
+                And his worst fear-not even that he still owes something, even though he can't bear to think about that-is someone finding out what he left in the bottom of a lake.
+            </p>
         </section>
 
         <section class="prose-section">
-            <h2>Professor Aldric Thorne</h2>
-            <h3>The One Who Saw Potential Anyway</h3>
+            <h2>Notes on inside jokes I have with myself here</h2>
 
-            <p>Professor Thorne taught evocation at the university where Therius did his undergraduate work. He was older—old enough to have seen several generations of ambitious students cycle through, old enough to have developed pattern recognition about which types of chaos were productive and which were merely destructive. He had a reputation for being demanding but fair, for pushing students harder than they thought they could go and somehow making them grateful for it afterwards.</p>
+            <p><em>The horse head statuette</em>, because I tought making it a play on "straight from the horse's mouth" was hilarious.
 
-            <p>He recognized Therius's talent immediately. Not just the raw ability—plenty of students had that—but the particular combination of theoretical understanding and practical drive that makes for genuinely excellent evocation work. He also recognized the warning signs. The restlessness, the need for stimulation, the tendency to treat safety guidelines as suggestions rather than requirements. He had seen this pattern before. It did not always end well.</p>
+            <p>I also see a connection to Godfather with the 'horse head delivering a devastating message' 
+            motif that I think is kind of satisfying in some way.</p>
 
-            <p>His approach was pragmatic. He could not make Therius into a different kind of person—could not remove the impulses or redirect them into purely academic channels. What he could do was try to teach harm reduction. How to be a brilliant disaster without destroying your career. How to document your experiments thoroughly enough that even the failures produced useful data. How to navigate university politics when your natural inclination was to set the politics on fire and see what happened.</p>
+            <p><em>Dolly Parton - Jolene</em>. Flaming locks of auburn hair and eyes of emerald green. I couldn't resist.</p>
 
-            <p>The lessons did not always land. Therius was better at absorbing the technical content than the professional advice. But Professor Thorne persisted, operating on the principle that some students need more repetition than others and that giving up on talented disasters only ensures they become untalented disasters. He wrote one of Therius's recommendation letters for Erytreum Halls with phrasing that was both honest and diplomatic: "demonstrates exceptional initiative in experimental applications." Anyone reading carefully would understand what that meant. Most people would not read carefully.</p>
+            <p><em>Faust and Mephistopheles</em>, but the Mephistopheles was inside him all along.</p>
 
-            <p>After the incident, Professor Thorne did not cut contact. He also did not pretend nothing had happened. He sent a letter—single page, handwritten, brief in the way that meaningful things can be brief—that said essentially: You are still talented. That still matters. The rest is complicated, but the talent is not. Do not forget that when you are deciding what comes next.</p>
-
-            <p>Therius kept the letter. It sits in a drawer in his quarters in Adanesne, along with a few other things he could not bring himself to leave behind when he packed. He does not read it often. When he does, usually late at night when the self-doubt is particularly loud, it serves as evidence that at least one person who knew him well thought the talent was worth preserving despite everything else.</p>
-
-            <p>He has not written back. Does not know what he would say that would not sound like excuses or justifications or requests for absolution he has not earned. Professor Thorne probably does not expect a response—the letter was not phrased as the beginning of a conversation but as a statement of fact. Still, the absence of response feels like another small failure in a long list of them. Another person he has disappointed through inaction if not through active harm.</p>
-
-            <p>Sometimes he imagines what it would be like to return to the old university. To walk past Professor Thorne's office, to see whether the door is open, to test whether the implicit offer in that letter still stands or whether too much time has passed. He does not seriously consider doing this. Going back would require facing all the other people, all the other conversations, all the weight of being the person he used to be. But the fantasy persists—the idea that somewhere, someone still thinks the talent matters more than the disasters. That if everything else falls apart, that fundamental fact might remain true.</p>
         </section>
+
+
     </div>
 
     <footer>
@@ -442,4 +339,5 @@
         <p>Documented Year 20 • Some memories sharper than others</p>
     </footer>
 </body>
+
 </html>
