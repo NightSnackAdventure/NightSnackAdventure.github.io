@@ -16,7 +16,7 @@
 html, body { margin: 0; }
 
 body {
-  height: 100vh; overflow: hidden; display: flex; flex-direction: column;
+  height: 100vh; height: 100dvh; overflow: hidden; display: flex; flex-direction: column;
   background: radial-gradient(135% 90% at 50% -10%, var(--bg2), var(--bg) 62%);
   color: var(--ink); font-family: 'EB Garamond', Georgia, serif; font-size: 17px; line-height: 1.62;
 }
@@ -50,3 +50,17 @@ body {
 .wd-divider span:nth-child(2) { width: 7px; height: 7px; transform: rotate(45deg); background: var(--gold); display: block; }
 .wd-divider span:nth-child(3) { width: 64px; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); }
 .wd-subtitle { font-family: 'Cinzel', serif; font-weight: 600; letter-spacing: .30em; font-size: 13px; color: var(--ink-soft); text-transform: uppercase; padding-left: .30em; }
+
+/* Mobile: keep the page-nav pills and theme switcher from colliding by tucking
+   them into tight top corners and collapsing the theme buttons to just their
+   color dots (labels still available via the button's title tooltip). */
+@media (max-width: 640px) {
+  .wd-header { padding: 52px 14px 14px; }
+  .wd-pages { top: 12px; left: 12px; gap: 5px; }
+  .wd-themes { top: 12px; right: 12px; gap: 5px; }
+  .wd-page-link { padding: 6px 9px; font-size: 8.5px; }
+  .wd-theme-btn { padding: 6px; gap: 0; }
+  .wd-theme-btn > span:last-child { display: none; }
+  .wd-kicker { font-size: 10px; letter-spacing: .34em; }
+  .wd-subtitle { font-size: 11px; letter-spacing: .24em; }
+}
