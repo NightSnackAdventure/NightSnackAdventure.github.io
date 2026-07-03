@@ -1,0 +1,44 @@
+{
+  "tabs": [
+    {
+      "key": "npc",
+      "label": "NPC",
+      "entries": [
+        {
+          "id": "durnan",
+          "title": "Durnan",
+          "type": "",
+          "subtitle": "",
+          "image": "kampanjaopas/assets/pasted-image-20260703141306.png",
+          "body": "The Yawning Portalin vähäpuheinen majatalonpitäjä. Hahmojen yhteinen kontakti tarinan alussa.",
+          "links": [
+            {
+              "tab": "paikat",
+              "id": "the-yawning-portal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "paikat",
+      "label": "Paikat",
+      "entries": [
+        {
+          "id": "the-yawning-portal",
+          "title": "The Yawning Portal",
+          "type": "majatalot ja tavernat",
+          "subtitle": "Castle Ward",
+          "image": "kampanjaopas/assets/yawningportalhf.webp",
+          "body": "Kolmikerroksinen majatalo, jonka alakerrassa on suuri taverna. Yksi Waterdeepin suosituimpia kohtaamispaikkoja.\n\nMajatalon pitäjä on vähäpuheinen Durnan.\n\nMajatalon keskellä on suuri kuilu, joka johtaa maanalaiseen luolastoon täynnä hirviöitä. Seikkailijat voivat laskeutua kuiluun yhden kultakolikon hinnalla. Takaisin majataloon nousemisesta Durnan veloittaa toisen kultakolikon.",
+          "links": [
+            {
+              "tab": "npc",
+              "id": "durnan"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
