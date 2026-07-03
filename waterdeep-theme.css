@@ -1,0 +1,52 @@
+/* Shared chrome for the Waterdeep pages (campaign guide + map): fonts, palette,
+   header, page nav, and theme switcher. Page-specific content styling stays
+   in each page's own <style> block. */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+:root {
+  --bg:#0d1326; --bg2:#0a0f1f; --panel:#15203f; --panel2:#1a274c;
+  --ink:#f2e8cd; --ink-soft:#c7bf9f; --ink-faint:#8b86a0;
+  --gold:#cda94f; --gold-soft:#e6d29a; --accent:#7d93cf;
+  --line:rgba(205,169,79,.22); --line-2:rgba(205,169,79,.45);
+  --shadow:rgba(0,0,0,.55); --ph:rgba(205,169,79,.10); --field:rgba(255,255,255,.05);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+
+body {
+  height: 100vh; overflow: hidden; display: flex; flex-direction: column;
+  background: radial-gradient(135% 90% at 50% -10%, var(--bg2), var(--bg) 62%);
+  color: var(--ink); font-family: 'EB Garamond', Georgia, serif; font-size: 17px; line-height: 1.62;
+}
+
+.wd-header { position: relative; padding: 26px 24px 18px; text-align: center; border-bottom: 1px solid var(--line); flex: none; }
+
+.wd-pages { position: absolute; top: 18px; left: 22px; display: flex; gap: 6px; }
+.wd-page-link {
+  display: flex; align-items: center; padding: 6px 12px;
+  background: transparent; border: 1px solid var(--line); border-radius: 3px; cursor: pointer;
+  color: var(--ink-faint); font-family: 'Cinzel', serif; font-size: 9.5px; letter-spacing: .12em;
+  text-transform: uppercase; text-decoration: none;
+}
+.wd-page-link.active { background: var(--field); border-color: var(--line-2); color: var(--gold); }
+
+.wd-themes { position: absolute; top: 18px; right: 22px; display: flex; gap: 6px; }
+.wd-theme-btn {
+  display: flex; align-items: center; gap: 7px; padding: 5px 9px;
+  background: transparent; border: 1px solid var(--line); border-radius: 3px; cursor: pointer;
+  color: var(--ink-faint); font-family: 'Cinzel', serif; font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase;
+}
+.wd-theme-btn.active { background: var(--field); border-color: var(--line-2); color: var(--ink); }
+.wd-theme-dot { position: relative; width: 14px; height: 14px; border-radius: 50%; overflow: hidden; display: inline-block; border: 1px solid var(--line); }
+.wd-theme-dot span { position: absolute; inset: 0; }
+.wd-theme-dot span:last-child { left: 50%; }
+
+.wd-kicker { font-family: 'Cinzel', serif; font-weight: 600; letter-spacing: .42em; font-size: 11px; color: var(--gold); text-transform: uppercase; padding-left: .42em; }
+.wd-title { font-family: 'Cinzel', serif; font-weight: 700; font-size: clamp(34px, 6vw, 58px); letter-spacing: .18em; margin: 7px 0 0; color: var(--ink); padding-left: .18em; }
+.wd-divider { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 12px 0 9px; }
+.wd-divider span:nth-child(1) { width: 64px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+.wd-divider span:nth-child(2) { width: 7px; height: 7px; transform: rotate(45deg); background: var(--gold); display: block; }
+.wd-divider span:nth-child(3) { width: 64px; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); }
+.wd-subtitle { font-family: 'Cinzel', serif; font-weight: 600; letter-spacing: .30em; font-size: 13px; color: var(--ink-soft); text-transform: uppercase; padding-left: .30em; }

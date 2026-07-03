@@ -6,47 +6,12 @@
 <title>Waterdeep - Kampanjaopas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="waterdeep-theme.css">
 <style>
-  :root {
-    --bg:#0d1326; --bg2:#0a0f1f; --panel:#15203f; --panel2:#1a274c;
-    --ink:#f2e8cd; --ink-soft:#c7bf9f; --ink-faint:#8b86a0;
-    --gold:#cda94f; --gold-soft:#e6d29a; --accent:#7d93cf;
-    --line:rgba(205,169,79,.22); --line-2:rgba(205,169,79,.45);
-    --shadow:rgba(0,0,0,.55); --ph:rgba(205,169,79,.10); --field:rgba(255,255,255,.05);
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; }
   #wd-scroll::-webkit-scrollbar { width: 10px; }
   #wd-scroll::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 5px; }
   #wd-scroll::-webkit-scrollbar-track { background: transparent; }
   @keyframes wdPulse { 0% { opacity: 0; } 12% { opacity: 1; } 100% { opacity: 0; } }
-
-  body {
-    height: 100vh; overflow: hidden; display: flex; flex-direction: column;
-    background: radial-gradient(135% 90% at 50% -10%, var(--bg2), var(--bg) 62%);
-    color: var(--ink); font-family: 'EB Garamond', Georgia, serif; font-size: 17px; line-height: 1.62;
-  }
-
-  .wd-header { position: relative; padding: 26px 24px 18px; text-align: center; border-bottom: 1px solid var(--line); flex: none; }
-  .wd-themes { position: absolute; top: 18px; right: 22px; display: flex; gap: 6px; }
-  .wd-theme-btn {
-    display: flex; align-items: center; gap: 7px; padding: 5px 9px;
-    background: transparent; border: 1px solid var(--line); border-radius: 3px; cursor: pointer;
-    color: var(--ink-faint); font-family: 'Cinzel', serif; font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase;
-  }
-  .wd-theme-btn.active { background: var(--field); border-color: var(--line-2); color: var(--ink); }
-  .wd-theme-dot { position: relative; width: 14px; height: 14px; border-radius: 50%; overflow: hidden; display: inline-block; border: 1px solid var(--line); }
-  .wd-theme-dot span { position: absolute; inset: 0; }
-  .wd-theme-dot span:last-child { left: 50%; }
-
-  .wd-kicker { font-family: 'Cinzel', serif; font-weight: 600; letter-spacing: .42em; font-size: 11px; color: var(--gold); text-transform: uppercase; padding-left: .42em; }
-  .wd-title { font-family: 'Cinzel', serif; font-weight: 700; font-size: clamp(34px, 6vw, 58px); letter-spacing: .18em; margin: 7px 0 0; color: var(--ink); padding-left: .18em; }
-  .wd-divider { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 12px 0 9px; }
-  .wd-divider span:nth-child(1) { width: 64px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
-  .wd-divider span:nth-child(2) { width: 7px; height: 7px; transform: rotate(45deg); background: var(--gold); display: block; }
-  .wd-divider span:nth-child(3) { width: 64px; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); }
-  .wd-subtitle { font-family: 'Cinzel', serif; font-weight: 600; letter-spacing: .30em; font-size: 13px; color: var(--ink-soft); text-transform: uppercase; padding-left: .30em; }
 
   .wd-nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 24px; border-bottom: 1px solid var(--line); background: var(--bg2); flex: none; }
   .wd-tabs { display: flex; gap: 2px; flex-wrap: wrap; }
@@ -117,6 +82,10 @@
 </head>
 <body>
   <header class="wd-header">
+    <div class="wd-pages">
+      <a class="wd-page-link active" href="waterdeep-kampanjaopas.html">Kampanjaopas</a>
+      <a class="wd-page-link" href="waterdeep-map.html">Kartta</a>
+    </div>
     <div class="wd-themes" id="wd-themes"></div>
     <div class="wd-kicker">Kampanjaopas</div>
     <h1 class="wd-title">WATERDEEP</h1>
@@ -133,40 +102,15 @@
     <div class="wd-container" id="wd-content"></div>
   </div>
 
+<script src="waterdeep-theme.js"></script>
 <script>
-const THEMES = {
-  loisto: { label: 'Loisto', vars: { '--bg':'#0d1326','--bg2':'#0a0f1f','--panel':'#15203f','--panel2':'#1a274c','--ink':'#f2e8cd','--ink-soft':'#c7bf9f','--ink-faint':'#8b86a0','--gold':'#cda94f','--gold-soft':'#e6d29a','--accent':'#7d93cf','--line':'rgba(205,169,79,.22)','--line-2':'rgba(205,169,79,.45)','--shadow':'rgba(0,0,0,.55)','--ph':'rgba(205,169,79,.10)','--field':'rgba(255,255,255,.05)' } },
-  tome: { label: 'Tomu', vars: { '--bg':'#e2d4b2','--bg2':'#d8c8a2','--panel':'#f2e8ce','--panel2':'#ecdfc0','--ink':'#2a2114','--ink-soft':'#5b4c33','--ink-faint':'#8a7850','--gold':'#9a7726','--gold-soft':'#7a5e1f','--accent':'#7c2e2e','--line':'rgba(120,95,40,.30)','--line-2':'rgba(120,95,40,.55)','--shadow':'rgba(80,60,25,.20)','--ph':'rgba(120,95,40,.12)','--field':'rgba(120,95,40,.06)' } },
-  lyhty: { label: 'Lyhty', vars: { '--bg':'#14110d','--bg2':'#0f0d0a','--panel':'#221d16','--panel2':'#2b251b','--ink':'#dccfb1','--ink-soft':'#a99c7e','--ink-faint':'#6f6552','--gold':'#c0964a','--gold-soft':'#d9b06a','--accent':'#b0613a','--line':'rgba(192,150,74,.20)','--line-2':'rgba(192,150,74,.45)','--shadow':'rgba(0,0,0,.6)','--ph':'rgba(192,150,74,.09)','--field':'rgba(255,255,255,.04)' } },
-};
-
-const state = { tabs: [], tab: null, query: '', highlightId: null };
-
-function applyTheme(name) {
-  const t = THEMES[name] || THEMES.loisto;
-  const r = document.documentElement.style;
-  Object.keys(t.vars).forEach(k => r.setProperty(k, t.vars[k]));
-}
+const state = { tabs: [], tab: null, query: '', highlightId: null, theme: 'lyhty' };
 
 function setTheme(name) {
-  applyTheme(name);
+  wdApplyTheme(name);
   try { localStorage.setItem('wd_theme', name); } catch (e) {}
   state.theme = name;
-  renderThemes();
-}
-
-function renderThemes() {
-  const el = document.getElementById('wd-themes');
-  el.innerHTML = '';
-  Object.keys(THEMES).forEach(key => {
-    const th = THEMES[key];
-    const btn = document.createElement('button');
-    btn.className = 'wd-theme-btn' + (state.theme === key ? ' active' : '');
-    btn.title = th.label;
-    btn.onclick = () => setTheme(key);
-    btn.innerHTML = `<span class="wd-theme-dot"><span style="background:${th.vars['--bg']}"></span><span style="background:${th.vars['--gold']}"></span></span><span>${th.label}</span>`;
-    el.appendChild(btn);
-  });
+  wdRenderThemeSwitcher('wd-themes', state.theme, setTheme);
 }
 
 function escapeHtml(str) {
@@ -284,13 +228,9 @@ fetch('kampanjaopas/data.json')
   .then(data => {
     state.tabs = data.tabs || [];
     state.tab = state.tabs.length ? state.tabs[0].key : null;
+    state.theme = wdLoadTheme();
 
-    let savedTheme;
-    try { savedTheme = localStorage.getItem('wd_theme'); } catch (e) {}
-    state.theme = (savedTheme && THEMES[savedTheme]) ? savedTheme : 'lyhty';
-    applyTheme(state.theme);
-
-    renderThemes();
+    wdRenderThemeSwitcher('wd-themes', state.theme, setTheme);
     renderTabs();
     renderContent();
   })
