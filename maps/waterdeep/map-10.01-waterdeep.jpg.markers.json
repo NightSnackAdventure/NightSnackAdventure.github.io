@@ -1,0 +1,49 @@
+{
+  "size": {
+    "w": 6429,
+    "h": 9000
+  },
+  "layers": [
+    {
+      "id": "default",
+      "name": "Default",
+      "visible": true,
+      "locked": false
+    }
+  ],
+  "markers": [
+    {
+      "type": "pin",
+      "id": "marker_ipn2av",
+      "x": 0.4900436079158425,
+      "y": 0.6170458539894046,
+      "layer": "default",
+      "link": "",
+      "iconKey": "circle",
+      "tooltip": "The Yawning Portal\nMajatalo, jossa suuri taverna. Suosittu kohtaamispaikka.\n",
+      "scaleLikeSticker": true,
+      "iconColor": "#ff0000"
+    }
+  ],
+  "bases": [
+    "map-10.01-waterdeep.jpg"
+  ],
+  "overlays": [],
+  "activeBase": "map-10.01-waterdeep.jpg",
+  "measurement": {
+    "scales": {},
+    "customUnitPxPerUnit": {},
+    "travelTimePresetIds": [],
+    "travelDaysEnabled": false,
+    "displayUnit": "km"
+  },
+  "pinSizeOverrides": {},
+  "grids": [],
+  "panClamp": true,
+  "drawLayers": [],
+  "drawings": [],
+  "secondScreen": {
+    "showGrids": true
+  },
+  "textLayers": []
+}
