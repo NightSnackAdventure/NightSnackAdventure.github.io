@@ -272,7 +272,7 @@ fetch('kampanjaopas/data.json')
 
     let savedTheme;
     try { savedTheme = localStorage.getItem('wd_theme'); } catch (e) {}
-    state.theme = (savedTheme && THEMES[savedTheme]) ? savedTheme : 'loisto';
+    state.theme = (savedTheme && THEMES[savedTheme]) ? savedTheme : 'lyhty';
     applyTheme(state.theme);
 
     renderThemes();
