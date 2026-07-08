@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Waterdeep Broadsheets</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@500;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --watch-parchment:#EDE3CC;
+    --watch-ink:#1F1B16;
+    --watch-brass:#8C7350;
+    --watch-teal:#33505A;
+    --watch-burgundy:#6E2A34;
+
+    --dawn-cream:#F7EEDF;
+    --dawn-glow:#FBE3BE;
+    --dawn-ink:#2E2013;
+    --dawn-gold:#B8860B;
+    --dawn-rose:#C96A57;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:24px 16px 60px;
+    background:#d8d0bd;
+    font-family:'EB Garamond', serif;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  /* ---- Toggle ---- */
+  .switcher{
+    display:flex;
+    gap:2px;
+    margin-bottom:28px;
+    background:#3a352c;
+    padding:4px;
+    border-radius:3px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.3);
+  }
+  .switcher button{
+    font-family:'EB Garamond', serif;
+    font-size:15px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:10px 22px;
+    border:none;
+    cursor:pointer;
+    background:#3a352c;
+    color:#d8cfb8;
+    transition:background 0.2s, color 0.2s;
+  }
+  .switcher button.active{
+    background:#ede3cc;
+    color:#1f1b16;
+    font-weight:600;
+  }
+
+  .page{
+    display:none;
+    width:100%;
+    max-width:860px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.35);
+  }
+  .page.active{ display:block; }
+
+  /* ================= WATERDEEP WATCH ================= */
+  #watch{
+    background:var(--watch-parchment);
+    color:var(--watch-ink);
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(140,115,80,0.08), transparent 60%),
+      radial-gradient(ellipse at 80% 90%, rgba(140,115,80,0.06), transparent 60%);
+  }
+  #watch .masthead{
+    text-align:center;
+    padding:22px 20px 14px;
+    border-bottom:4px double var(--watch-ink);
+  }
+  #watch .kicker{
+    font-size:11px;
+    letter-spacing:0.25em;
+    text-transform:uppercase;
+    color:var(--watch-burgundy);
+    margin-bottom:6px;
+  }
+  #watch h1{
+    font-family:'Playfair Display', serif;
+    font-weight:900;
+    font-size:64px;
+    margin:0;
+    letter-spacing:0.01em;
+  }
+  #watch .tagline{
+    font-style:italic;
+    font-size:14px;
+    color:var(--watch-brass);
+    margin-top:4px;
+  }
+  #watch .meta-row{
+    display:flex;
+    justify-content:space-between;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:8px 24px 0;
+    color:var(--watch-ink);
+    border-top:1px solid var(--watch-brass);
+    margin-top:10px;
+    padding-top:8px;
+  }
+  #watch .body{
+    padding:22px 26px 30px;
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:24px;
+  }
+  #watch .headline{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:29px;
+    line-height:1.1;
+    margin:0 0 8px;
+  }
+  #watch .byline{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--watch-teal);
+    margin-bottom:10px;
+  }
+  #watch p{
+    font-size:15px;
+    line-height:1.5;
+    margin:0 0 12px;
+  }
+  #watch .drop::first-letter{
+    font-family:'Playfair Display', serif;
+    font-size:52px;
+    float:left;
+    line-height:0.8;
+    padding:6px 8px 0 0;
+    color:var(--watch-burgundy);
+    font-weight:900;
+  }
+  #watch .rule{
+    border:none;
+    border-top:1px solid var(--watch-brass);
+    margin:14px 0;
+  }
+  #watch .secondary h3{
+    font-family:'Playfair Display', serif;
+    font-size:18px;
+    margin:0 0 6px;
+  }
+  #watch .theater-box{
+    border:2px solid var(--watch-teal);
+    padding:14px 16px;
+    margin-top:6px;
+    background:rgba(51,80,90,0.05);
+    position:relative;
+  }
+  #watch .theater-box .eye{
+    position:absolute;
+    top:-13px;
+    left:14px;
+    background:var(--watch-parchment);
+    padding:0 8px;
+    font-size:20px;
+  }
+  #watch .theater-box h4{
+    font-family:'Playfair Display', serif;
+    font-size:15px;
+    margin:6px 0 8px;
+    color:var(--watch-teal);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  #watch .theater-box p{
+    font-size:13.5px;
+    font-style:italic;
+    margin:0;
+  }
+  #watch .stars{
+    color:var(--watch-burgundy);
+    letter-spacing:2px;
+    font-style:normal;
+    display:block;
+    margin-top:8px;
+    font-size:14px;
+  }
+  #watch .gossip{
+    margin-top:16px;
+    font-size:12.5px;
+  }
+  #watch .gossip h4{
+    font-family:'Playfair Display', serif;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    border-bottom:1px solid var(--watch-brass);
+    padding-bottom:4px;
+    margin-bottom:8px;
+  }
+  #watch .gossip ul{
+    padding-left:16px;
+    margin:0;
+  }
+  #watch .gossip li{
+    margin-bottom:6px;
+    line-height:1.4;
+  }
+  #watch .price-strip{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    padding:10px;
+    border-top:2px double var(--watch-ink);
+    color:var(--watch-brass);
+  }
+
+  /* ================= THE ETERNAL DAWN ================= */
+  #dawn{
+    background:linear-gradient(180deg, var(--dawn-glow) 0%, var(--dawn-cream) 220px);
+    color:var(--dawn-ink);
+  }
+  #dawn .masthead{
+    text-align:center;
+    padding:26px 20px 16px;
+    position:relative;
+  }
+  #dawn .sunburst{
+    width:70px;
+    height:70px;
+    margin:0 auto 8px;
+    position:relative;
+  }
+  #dawn .sunburst svg{ width:100%; height:100%; }
+  #dawn .kicker{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    color:var(--dawn-rose);
+    margin-bottom:8px;
+  }
+  #dawn h1{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    font-size:52px;
+    margin:0;
+    color:var(--dawn-ink);
+    letter-spacing:0.02em;
+  }
+  #dawn .tagline{
+    font-family:'Lora', serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--dawn-gold);
+    margin-top:6px;
+  }
+  #dawn .meta-row{
+    display:flex;
+    justify-content:space-between;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:10px 24px 0;
+    margin-top:12px;
+    border-top:2px solid var(--dawn-gold);
+    padding-top:8px;
+  }
+  #dawn .body{
+    padding:22px 26px 10px;
+  }
+  #dawn .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:18px;
+    margin-bottom:20px;
+  }
+  #dawn .card{
+    background:rgba(255,255,255,0.4);
+    border:1px solid var(--dawn-gold);
+    padding:14px;
+  }
+  #dawn .card .eyebrow{
+    font-family:'Cinzel', serif;
+    font-size:10px;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    color:var(--dawn-rose);
+    margin-bottom:6px;
+  }
+  #dawn .card h3{
+    font-family:'Lora', serif;
+    font-weight:600;
+    font-size:16px;
+    margin:0 0 8px;
+    line-height:1.2;
+  }
+  #dawn .card p{
+    font-family:'Lora', serif;
+    font-size:13px;
+    line-height:1.45;
+    margin:0;
+  }
+  #dawn .forecast{
+    border:2px solid var(--dawn-gold);
+    padding:16px 18px;
+    background:rgba(184,134,11,0.06);
+    margin-bottom:20px;
+  }
+  #dawn .forecast h3{
+    font-family:'Cinzel', serif;
+    font-size:15px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    margin:0 0 10px;
+    color:var(--dawn-gold);
+  }
+  #dawn .forecast-row{
+    display:flex;
+    justify-content:space-between;
+    font-family:'Lora', serif;
+    font-size:13px;
+    padding:5px 0;
+    border-bottom:1px dotted rgba(46,32,19,0.25);
+  }
+  #dawn .forecast-row:last-child{ border-bottom:none; }
+  #dawn .forecast-row span:last-child{
+    color:var(--dawn-rose);
+    font-style:italic;
+  }
+  #dawn .ad-strip{
+    display:flex;
+    border-top:2px solid var(--dawn-gold);
+    padding:12px 24px;
+    gap:20px;
+    font-family:'Lora', serif;
+    font-size:11px;
+    font-style:italic;
+    color:var(--dawn-ink);
+    opacity:0.75;
+    flex-wrap:wrap;
+  }
+  #dawn .price-strip{
+    text-align:center;
+    font-family:'Cinzel', serif;
+    font-size:10px;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    padding:12px;
+    color:var(--dawn-gold);
+  }
+
+  @media (max-width:640px){
+    #watch .body{ grid-template-columns:1fr; }
+    #dawn .grid{ grid-template-columns:1fr; }
+    #watch h1{ font-size:44px; }
+    #dawn h1{ font-size:36px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="switcher">
+  <button id="btn-watch" class="active" onclick="show('watch')">Waterdeep Watch</button>
+  <button id="btn-dawn" onclick="show('dawn')">The Eternal Dawn</button>
+</div>
+
+<!-- ================= WATERDEEP WATCH ================= -->
+<div id="watch" class="page active">
+  <div class="masthead">
+    <div class="kicker">City of Splendors · Est. Long Past Memory</div>
+    <h1>THE WATERDEEP WATCH</h1>
+    <div class="tagline">&ldquo;What the City Whispers, We Print Aloud&rdquo;</div>
+  </div>
+  <div class="meta-row">
+    <span>Issue No. 214</span>
+    <span>Tarsakh, Year of Three Wishtars</span>
+    <span>1 Nib</span>
+  </div>
+
+  <div class="body">
+    <div class="main-col">
+      <div class="headline">DOCK WARD HAGGLING TURNS TO BRAWL;<br>THREE STALLS OVERTURNED AT DAWN MARKET</div>
+      <div class="byline">A Watch Correspondent, Dock Ward Desk</div>
+      <p class="drop">What began as a dispute over the price of pickled eel ended with two fishmongers, a rope-seller, and a very confused goat all tangled in the same net. The City Watch arrived to find the market largely resolved itself — though the goat, this paper notes, remains at large.</p>
+      <p>Stallholders are demanding the Guild of Fishmongers post a mediator at future markets. The Guild, as ever, has declined comment.</p>
+      <hr class="rule">
+      <div class="secondary">
+        <h3>Yawning Portal Reopens Taproom After Renovation</h3>
+        <p>Durnan's legendary tavern-over-a-hole has reopened its lower gallery to patrons, promising "the same well, somehow deeper." Adventuring parties are already lining up at dawn to make the descent.</p>
+      </div>
+    </div>
+
+    <div class="side-col">
+      <div class="theater-box">
+        <div class="eye">👁</div>
+        <h4>One-Eyed Jack at the Playhouse</h4>
+        <p>&ldquo;A Comedy of Wardens,&rdquo; now playing at the Cliffwatch stage, mistakes a lot of shouting for wit — though the third act's masquerade scene very nearly redeems it. This critic left entertained more than moved, which is not always a fault.&rdquo;</p>
+        <i class="stars">★★★☆☆</i>
+      </div>
+
+      <div class="gossip">
+        <h4>Seen About Town</h4>
+        <ul>
+          <li>A well-dressed stranger was seen tipping broadcryers double the usual rate just to shout headlines louder near the City of the Dead. Why, nobody could say.</li>
+          <li>Volothamp Geddarm reportedly owes the Yawning Portal a bar tab "of legendary proportions."</li>
+          <li>A mysterious new perfumery has opened in the Castle Ward, and half the ward's nobility already smells like it.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="price-strip">Printed at the sign of the quill · North Ward · Complaints to the editor, not the broadcryer</div>
+</div>
+
+<!-- ================= THE ETERNAL DAWN ================= -->
+<div id="dawn" class="page">
+  <div class="masthead">
+    <div class="sunburst">
+      <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="18" fill="none" stroke="#B8860B" stroke-width="2.5"/>
+        <g stroke="#C96A57" stroke-width="2.5">
+          <line x1="50" y1="4" x2="50" y2="20"/>
+          <line x1="50" y1="80" x2="50" y2="96"/>
+          <line x1="4" y1="50" x2="20" y2="50"/>
+          <line x1="80" y1="50" x2="96" y2="50"/>
+          <line x1="17" y1="17" x2="29" y2="29"/>
+          <line x1="71" y1="71" x2="83" y2="83"/>
+          <line x1="83" y1="17" x2="71" y2="29"/>
+          <line x1="29" y1="71" x2="17" y2="83"/>
+        </g>
+      </svg>
+    </div>
+    <div class="kicker">Blessed of the Morninglord</div>
+    <h1>THE ETERNAL DAWN</h1>
+    <div class="tagline">What Begins Today, Endures Tomorrow</div>
+  </div>
+  <div class="meta-row">
+    <span>Vol. XI, No. 8</span>
+    <span>Tarsakh, Year of Three Wishtars</span>
+    <span>3 Nibs</span>
+  </div>
+
+  <div class="body">
+    <div class="grid">
+      <div class="card">
+        <div class="eyebrow">New Ventures</div>
+        <h3>Ironhelm &amp; Daughters Opens Second Forge in Dock Ward</h3>
+        <p>The merchant house cites "unrelenting demand" for blessed steel fittings ahead of the shipping season.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Guild &amp; Charter</div>
+        <h3>Fellowship of Innkeepers Petitions for Lower Cellar Tariffs</h3>
+        <p>A vote is expected before the Open Lord's council within the fortnight.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Near Horizon</div>
+        <h3>Spring Faire Committee Announces Trollfair Grounds</h3>
+        <p>Organizers promise "the largest Trolltide bonfire the Ward has seen in a decade."</p>
+      </div>
+    </div>
+
+    <div class="forecast">
+      <h3>The Almanac of Probable Politics</h3>
+      <div class="forecast-row"><span>Trade Winds, Sword Coast</span><span>Fair and steady</span></div>
+      <div class="forecast-row"><span>Guild Relations, Dock Ward</span><span>Passing squalls</span></div>
+      <div class="forecast-row"><span>Foreign Trade, Amn</span><span>Fair and rising</span></div>
+      <div class="forecast-row"><span>Public Mood, City-Wide</span><span>Fair, with festival cheer ahead</span></div>
+    </div>
+  </div>
+
+  <div class="ad-strip">
+    <span>✦ Blessed unions performed at dawn — Spires of the Morning, by appointment</span>
+    <span>✦ New endeavor? Let the Morninglord's light find your ledgers first.</span>
+  </div>
+  <div class="price-strip">Printed under license of the Church of Lathander · North Ward Chapter</div>
+</div>
+
+<script>
+  function show(which){
+    document.getElementById('watch').classList.toggle('active', which==='watch');
+    document.getElementById('dawn').classList.toggle('active', which==='dawn');
+    document.getElementById('btn-watch').classList.toggle('active', which==='watch');
+    document.getElementById('btn-dawn').classList.toggle('active', which==='dawn');
+  }
+</script>
+
+</body>
+</html>
