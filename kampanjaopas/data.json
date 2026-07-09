@@ -25,6 +25,15 @@
       "label": "Paikat",
       "entries": [
         {
+          "id": "spires-of-the-morning",
+          "title": "Spires of the Morning",
+          "type": "",
+          "subtitle": "",
+          "image": "kampanjaopas/assets/pasted-image-20260709095652.png",
+          "body": "Vaaleanpunaisesta marmorista rakennettu, kolmikerroksinen Lathanderin temppeli, jonka tornien kultaiset ja hopeiset huiput aamuisin heijastavat nousevan auringon valoa.",
+          "links": []
+        },
+        {
           "id": "the-yawning-portal",
           "title": "The Yawning Portal",
           "type": "majatalot ja tavernat",
