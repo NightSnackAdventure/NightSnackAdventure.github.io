@@ -26,18 +26,6 @@
     },
     {
       "type": "pin",
-      "id": "marker_hgi3bn",
-      "x": 0.30003583994144933,
-      "y": 0.387994097718866,
-      "layer": "default",
-      "link": "",
-      "iconKey": "circle",
-      "tooltip": "Spires of the Morning.\nTemple of Lathander.",
-      "scaleLikeSticker": true,
-      "iconColor": "#ffff00"
-    },
-    {
-      "type": "pin",
       "id": "marker_lqj0w7",
       "x": 0.5381370160443921,
       "y": 0.7247557921628732,
@@ -81,5 +69,28 @@
   "secondScreen": {
     "showGrids": true
   },
-  "textLayers": []
+  "textLayers": [],
+  "deleted": [
+    {
+      "id": "undo_rh81uj",
+      "label": "Delete pin",
+      "createdAt": "2026-07-31T11:56:37.742Z",
+      "payload": {
+        "kind": "marker",
+        "marker": {
+          "type": "pin",
+          "id": "marker_hgi3bn",
+          "x": 0.30003583994144933,
+          "y": 0.387994097718866,
+          "layer": "default",
+          "link": "",
+          "iconKey": "circle",
+          "tooltip": "Spires of the Morning.\nTemple of Lathander.",
+          "scaleLikeSticker": true,
+          "iconColor": "#ffff00"
+        },
+        "index": 1
+      }
+    }
+  ]
 }
