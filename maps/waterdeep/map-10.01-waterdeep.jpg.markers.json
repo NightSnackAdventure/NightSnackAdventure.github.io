@@ -35,6 +35,30 @@
       "tooltip": "Spires of the Morning.\nTemple of Lathander.",
       "scaleLikeSticker": true,
       "iconColor": "#ffff00"
+    },
+    {
+      "type": "pin",
+      "id": "marker_lqj0w7",
+      "x": 0.5381370160443921,
+      "y": 0.7247557921628732,
+      "layer": "default",
+      "link": "",
+      "iconKey": "circle",
+      "tooltip": "The Skewered Dragon",
+      "scaleLikeSticker": true,
+      "iconColor": "#ff0000"
+    },
+    {
+      "type": "pin",
+      "id": "marker_d3pf51",
+      "x": 0.5530562892029264,
+      "y": 0.7187183754118888,
+      "layer": "default",
+      "link": "",
+      "iconKey": "circle",
+      "tooltip": "The Old Xoblob Shop",
+      "scaleLikeSticker": true,
+      "iconColor": "#ff0000"
     }
   ],
   "bases": [

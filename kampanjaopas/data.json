@@ -5,16 +5,67 @@
       "label": "NPC",
       "entries": [
         {
+          "id": "diggory",
+          "title": "Diggory",
+          "type": "baarimikot",
+          "subtitle": "Dock Ward",
+          "image": null,
+          "body": "The Skewered Dragonin baarimikko Dock Wardissa. \n\nLiian pitkät raajat, kihara tukka. Pureskelee aina hammastikkua.\n\nPelaajahahmo Frecklesin tuttava.",
+          "links": [
+            {
+              "tab": "paikat",
+              "id": "the-skewered-dragon"
+            }
+          ]
+        },
+        {
           "id": "durnan",
           "title": "Durnan",
-          "type": "",
-          "subtitle": "",
+          "type": "baarimikot",
+          "subtitle": "Castle Ward",
           "image": "kampanjaopas/assets/pasted-image-20260703141306.png",
-          "body": "The Yawning Portalin vähäpuheinen majatalonpitäjä. Hahmojen yhteinen kontakti tarinan alussa.",
+          "body": "The Yawning Portalin vähäpuheinen majatalonpitäjä. Entinen seikkailija. Hahmojen yhteinen kontakti tarinan alussa.",
           "links": [
             {
               "tab": "paikat",
               "id": "the-yawning-portal"
+            }
+          ]
+        },
+        {
+          "id": "floon-blagmaar",
+          "title": "Floon Blagmaar",
+          "type": "",
+          "subtitle": "",
+          "image": null,
+          "body": "Volon ystävä, jonka katoamista seikkailijat ovat alkaneet selvittää.\n\nPunaiset hiukset. Komeampi kuin mitä on älykäs. Pukeutunut kalliin näköiseen, vaaleansiniseen, kullalla ja hopealla kirjailtuun takkiin.",
+          "links": []
+        },
+        {
+          "id": "volothamp-volo-geddarm",
+          "title": "Volothamp 'Volo' Geddarm",
+          "type": "",
+          "subtitle": "",
+          "image": null,
+          "body": "[![HAT](https://static.wikia.nocookie.net/forgottenrealms/images/0/07/Volo_Honor_Among_Thieves.png/revision/latest/scale-to-width-down/268?cb=20230404043010)\n\n](https://static.wikia.nocookie.net/forgottenrealms/images/0/07/Volo_Honor_Among_Thieves.png/revision/latest?cb=20230404043010 \"HAT\")\n\n*\"Velho, kirjailija, yleisasiantuntija ja julkisuuden henkilö, palveluksessanne.\"*\n\nKiistelty ja kohuja aiheuttanut tietokirjailija, jonka teoksien tiedetään sisältävän enemmän liioittelua kuin totuutta...\n\nLähestyi seikkailijoita pyytäen heidän apuaan kadonneen ystävänsä, Floon Blagmaarin etsimisessä.\n\nAsuu tällä hetkellä The Yawning Portal majatalossa.",
+          "links": [
+            {
+              "tab": "paikat",
+              "id": "the-yawning-portal"
+            }
+          ]
+        },
+        {
+          "id": "xoblob",
+          "title": "Xoblob",
+          "type": "kauppiaat",
+          "subtitle": "Dock Ward",
+          "image": null,
+          "body": "The Old Xoblob Shopin omaperäinen kauppias, gnome, jonka kasvoihin on maalattu yhdeksän silmää.",
+          "links": [
+            {
+              "tab": "paikat",
+              "id": "the-old-xoblob-shop"
             }
           ]
         }
@@ -25,13 +76,31 @@
       "label": "Paikat",
       "entries": [
         {
-          "id": "spires-of-the-morning",
-          "title": "Spires of the Morning",
-          "type": "",
-          "subtitle": "",
-          "image": "kampanjaopas/assets/pasted-image-20260709095652.png",
-          "body": "---\nsijainti: Castle Ward\ntags:\n  - temppelit\n---\nVaaleanpunaisesta marmorista rakennettu, kolmikerroksinen Lathanderin temppeli, jonka tornien kultaiset ja hopeiset huiput aamuisin heijastavat nousevan auringon valoa.",
+          "id": "the-old-xoblob-shop",
+          "title": "The Old Xoblob shop",
+          "type": "kaupat",
+          "subtitle": "Dock Ward",
+          "image": null,
+          "body": "Kauppa, joka myy erilaisia turhakkeita ja tilpehöörää. Maalattu niin sisältä kuin ulkoa violetiksi. Ikkunassa näytillä huonosti täytetty beholder-hirviö, jonka aitoudesta on vaikea sanoa mitään...",
           "links": []
+        },
+        {
+          "id": "the-skewered-dragon",
+          "title": "The Skewered Dragon",
+          "type": "majatalot ja tavernat",
+          "subtitle": "Dock Ward",
+          "image": null,
+          "body": "Ränsistynyt taverna Dock Wardissa. Näyttää melkein rauniolta. Ikkunat rikottu. Katossa kiinni laivan ankkuri.\n\nKadonnut Floon Blagmaar nähtiin viimeisen kerran täällä.\n\nBaarimikkona toimii Frecklesin tuttava Diggory",
+          "links": [
+            {
+              "tab": "npc",
+              "id": "floon-blagmaar"
+            },
+            {
+              "tab": "npc",
+              "id": "diggory"
+            }
+          ]
         },
         {
           "id": "the-yawning-portal",
