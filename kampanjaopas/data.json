@@ -68,6 +68,20 @@
               "id": "the-old-xoblob-shop"
             }
           ]
+        },
+        {
+          "id": "yagra-stonefist",
+          "title": "Yagra Stonefist",
+          "type": "",
+          "subtitle": "",
+          "image": null,
+          "body": "[![Yagra Stonefist](https://static.wikia.nocookie.net/forgottenrealms/images/d/d7/Yagra_Stonefist.jpg/revision/latest/scale-to-width-down/267?cb=20190301155627)\n\n](https://static.wikia.nocookie.net/forgottenrealms/images/d/d7/Yagra_Stonefist.jpg/revision/latest?cb=20190301155627 \"Yagra Stonefist\")\nHenkivartijana työskentelevä puoliörkkinainen.\n\nYagran kimppuun hyökättiin The Yawning Portal -tavernassa.",
+          "links": [
+            {
+              "tab": "paikat",
+              "id": "the-yawning-portal"
+            }
+          ]
         }
       ]
     },
@@ -81,8 +95,13 @@
           "type": "kaupat",
           "subtitle": "Dock Ward",
           "image": null,
-          "body": "Kauppa, joka myy erilaisia turhakkeita ja tilpehöörää. Maalattu niin sisältä kuin ulkoa violetiksi. Ikkunassa näytillä huonosti täytetty beholder-hirviö, jonka aitoudesta on vaikea sanoa mitään...",
-          "links": []
+          "body": "Kauppa, joka myy erilaisia turhakkeita ja tilpehöörää. Maalattu niin sisältä kuin ulkoa violetiksi. Ikkunassa näytillä huonosti täytetty beholder-hirviö, jonka aitoudesta on vaikea sanoa mitään...\n\nKauppiaana toimii Xoblob",
+          "links": [
+            {
+              "tab": "npc",
+              "id": "xoblob"
+            }
+          ]
         },
         {
           "id": "the-skewered-dragon",
