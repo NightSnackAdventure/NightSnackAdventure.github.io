@@ -66,7 +66,29 @@
   .wd-card-subtitle { font-style: italic; color: var(--ink-soft); font-size: 15px; margin-top: -3px; }
   .wd-card-text { margin: 0; color: var(--ink-soft); font-size: 15.5px; text-wrap: pretty; }
   .wd-card-text p { margin: 0 0 0.6em; }
-  .wd-card-text p:last-child { margin-bottom: 0; }
+  .wd-card-text > *:last-child { margin-bottom: 0; }
+
+  /* Markdown from the notes (see waterdeep-markdown.js) */
+  .wd-card-text strong { color: var(--ink); font-weight: 600; }
+  .wd-card-text em { font-style: italic; }
+  .wd-card-text a { color: var(--gold-soft); }
+  .wd-card-text code {
+    font-family: 'Courier New', monospace; font-size: 0.85em;
+    background: var(--field); border: 1px solid var(--line); border-radius: 2px; padding: 0 4px;
+  }
+  .wd-card-text h4.wd-md-h {
+    font-family: 'Cinzel', serif; font-size: 12px; font-weight: 600; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--gold); margin: 0.9em 0 0.45em;
+  }
+  .wd-card-text h4.wd-md-h:first-child { margin-top: 0; }
+  .wd-card-text ul, .wd-card-text ol { margin: 0 0 0.6em; padding-left: 1.3em; }
+  .wd-card-text li { margin-bottom: 0.35em; }
+  .wd-card-text li::marker { color: var(--gold-soft); }
+  .wd-card-text blockquote {
+    margin: 0 0 0.6em; padding-left: 0.85em; border-left: 2px solid var(--line-2);
+    font-style: italic; color: var(--ink-faint);
+  }
+  .wd-card-text hr { border: none; border-top: 1px solid var(--line); margin: 0.9em 0; }
   .wd-links { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 3px; }
   .wd-link-btn {
     display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; background: transparent;
@@ -122,6 +144,7 @@
   </div>
 
 <script src="waterdeep-theme.js"></script>
+<script src="waterdeep-markdown.js"></script>
 <script>
 const state = { tabs: [], tab: null, query: '', highlightId: null, theme: 'lyhty' };
 
@@ -208,8 +231,7 @@ function renderContent() {
 
   const cards = items.map(e => {
     const highlight = state.highlightId === e.id;
-    const paragraphs = (e.body || '').split(/\n{2,}/).filter(Boolean)
-      .map(p => `<p>${escapeHtml(p).replace(/\n/g, '<br>')}</p>`).join('');
+    const paragraphs = wdMarkdown(e.body || '');
     const links = (e.links || []).map(l =>
       `<button class="wd-link-btn" data-tab="${l.tab}" data-id="${l.id}"><span>↦</span>${escapeHtml(lookupTitle(l.tab, l.id))}</button>`
     ).join('');
