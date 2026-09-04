@@ -22,7 +22,7 @@
           "id": "durnan",
           "title": "Durnan",
           "type": "baarimikot",
-          "subtitle": "Castle Ward",
+          "subtitle": "The Yawning Portal",
           "image": "kampanjaopas/assets/pasted-image-20260703141306.png",
           "body": "The Yawning Portalin vähäpuheinen majatalonpitäjä. Entinen seikkailija. Hahmojen yhteinen kontakti tarinan alussa.",
           "links": [
@@ -36,16 +36,43 @@
           "id": "floon-blagmaar",
           "title": "Floon Blagmaar",
           "type": "",
-          "subtitle": "??",
+          "subtitle": "",
           "image": null,
-          "body": "Volon ystävä, jonka katoamista seikkailijat ovat alkaneet selvittää.\n\nPunaiset hiukset. Komeampi kuin mitä on älykäs. Pukeutunut kalliin näköiseen, vaaleansiniseen, kullalla ja hopealla kirjailtuun takkiin.",
+          "body": "Volon ystävä, jonka seikkailijat pelastivat Xanatharin killan kynsistä.\n\nPunaiset hiukset. Komeampi kuin mitä on älykäs. Pukeutunut kalliin näköiseen, vaaleansiniseen, kullalla ja hopealla kirjailtuun takkiin.",
+          "links": []
+        },
+        {
+          "id": "hyustus-staget",
+          "title": "Hyustus Staget",
+          "type": "City Watch",
+          "subtitle": "",
+          "image": null,
+          "body": "Dock Wardissa työskentelevä City Watchin vakava ja topakka kapteeni.",
+          "links": []
+        },
+        {
+          "id": "mind-flayer",
+          "title": "Mind Flayer",
+          "type": "",
+          "subtitle": "",
+          "image": "kampanjaopas/assets/pasted-image-20260618160237.png",
+          "body": "Seikkailijat kohtasivat Xanatharin killan piilopaikassa voimakkaan Mind Flayerin, joka poistui portaalin kautta kesken taistelun.",
+          "links": []
+        },
+        {
+          "id": "renaer-neverember",
+          "title": "Renaer Neverember",
+          "type": "aateliset",
+          "subtitle": "",
+          "image": "kampanjaopas/assets/pasted-image-20260701125826.png",
+          "body": "Waterdeepin entisen Open Lordin Dagult Neveremberin poika. Etäiset välit isäänsä.\n\nRenaer kidnapattiin Zhentarimin toimesta yhtä aikaa Floonin kanssa. Renaer lähti seikkailijoiden mukaan pelastamaan Floonin Xanatharin killan piilopaikasta.",
           "links": []
         },
         {
           "id": "volothamp-volo-geddarm",
           "title": "Volothamp 'Volo' Geddarm",
           "type": "",
-          "subtitle": "Castle Ward",
+          "subtitle": "The Yawning Portal",
           "image": "kampanjaopas/assets/pasted-image-20260811160650.png",
           "body": "*\"Velho, kirjailija, yleisasiantuntija ja julkisuuden henkilö, palveluksessanne.\"*\n\nKiistelty ja kohuja aiheuttanut tietokirjailija, jonka teoksien tiedetään sisältävän enemmän liioittelua kuin totuutta...\n\nLähestyi seikkailijoita pyytäen heidän apuaan kadonneen ystävänsä, Floon Blagmaarin etsimisessä.\n\nAsuu tällä hetkellä The Yawning Portal majatalossa.",
           "links": [
@@ -134,6 +161,33 @@
               "id": "durnan"
             }
           ]
+        },
+        {
+          "id": "trollskull-manor",
+          "title": "Trollskull Manor",
+          "type": "asuinrakennukset",
+          "subtitle": "North Ward",
+          "image": "kampanjaopas/assets/pasted-image-20260628144424.png",
+          "body": "Seikkailijat saivat Vololta palkkioksi kartanon. Hyvällä paikalla North Wardissa, mutta vaatii pientä pintaremonttia...",
+          "links": []
+        },
+        {
+          "id": "xanatharin-killan-piilopaikka",
+          "title": "Xanatharin killan piilopaikka",
+          "type": "",
+          "subtitle": "",
+          "image": null,
+          "body": "Xanatharin killan piilopaikka löytyi viemäristä noin tunnin kävelyn jälkeen. Nopeampi sisäänkäynti tiedetään kulkevan jonkin Dock Wardin tavernan kellarin kautta.",
+          "links": []
+        },
+        {
+          "id": "zhentarimin-piilopaikka",
+          "title": "Zhentarimin piilopaikka",
+          "type": "",
+          "subtitle": "",
+          "image": null,
+          "body": "Zhentarimilla oli piilopaikka Dock Wardissa, the Skewered Dragon -taveran lähellä sijaitsevassa varastorakennuksessa.",
+          "links": []
         }
       ]
     },

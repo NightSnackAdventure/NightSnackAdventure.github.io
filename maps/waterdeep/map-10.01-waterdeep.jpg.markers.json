@@ -47,6 +47,18 @@
       "tooltip": "The Old Xoblob Shop",
       "scaleLikeSticker": true,
       "iconColor": "#ff0000"
+    },
+    {
+      "type": "pin",
+      "id": "marker_hlkw7y",
+      "x": 0.5464495398251709,
+      "y": 0.30243578221587686,
+      "layer": "default",
+      "link": "",
+      "iconKey": "circle",
+      "tooltip": "Trollskull Manor",
+      "scaleLikeSticker": true,
+      "iconColor": "#ff0000"
     }
   ],
   "bases": [
